@@ -28,7 +28,7 @@ MCP 这一年变化太大了，先给你一个时间线：
 | **2025-11** | 一周年规范发布 | 新增异步操作、无状态模式 |
 | **2025-12** | 捐赠给 Linux Foundation | 加入 AAIF，走向 vendor-neutral 治理 |
 
-> ⚠️ **时效性提示** (2025-01): MCP 下载量数据来自官方 blog 统计。请查阅 [MCP 官网](https://modelcontextprotocol.io/) 获取最新数据。
+> ⚠️ **时效性提示** (2026-01): MCP 下载量数据来自官方 blog 统计。请查阅 [MCP 官网](https://modelcontextprotocol.io/) 获取最新数据。
 
 现在的 MCP：
 - SDK 月下载量：**9700 万+**（官方 blog 的统计口径）

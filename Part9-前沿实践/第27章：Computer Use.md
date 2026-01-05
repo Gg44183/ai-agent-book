@@ -190,7 +190,7 @@ Computer Use 需要多模态模型——既能理解图像，又能输出结构�
 model_capabilities:
   multimodal_models:
     - gpt-5.1
-    - gpt-5-pro-2025-10-06
+    - gpt-5-pro-2025-08-07
     - claude-sonnet-4-5-20250929
     - gemini-2.5-flash
     - gemini-2.0-flash

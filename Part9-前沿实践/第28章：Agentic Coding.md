@@ -663,7 +663,7 @@ model_capabilities:
     - codestral-22b-v0.1      # 专门优化的编码模型
     - deepseek-v3.2           # 代码能力强
     - claude-sonnet-4-5-20250929  # 通用+代码
-    - gpt-5-pro-2025-10-06    # 重推理
+    - gpt-5-pro-2025-08-07    # 重推理
     - gpt-5.1                 # 最强通用
 ```
 
