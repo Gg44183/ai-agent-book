@@ -1,4 +1,4 @@
-# AI Agent Architecture
+# AI Agent Architecture - The Book
 
 > **From Concept to Production: Framework-Agnostic AI Agent Architecture Patterns**
 
