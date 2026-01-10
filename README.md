@@ -11,6 +11,8 @@
 
 ## 这本书讲什么？
 
+![从单 Agent 到企业级多智能体系统](assets/book-overview-hero.svg)
+
 **不是框架文档，而是让你理解 Agent 系统设计模式的实战指南。**
 
 市面上的 Agent 教程大多停留在：
