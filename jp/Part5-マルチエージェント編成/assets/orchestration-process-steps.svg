@@ -1,0 +1,132 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 560">
+  <defs>
+    <style>
+      .label { font: 500 10px 'SF Mono', 'Menlo', 'Monaco', monospace; fill: #666; text-anchor: middle; letter-spacing: 0.5px; }
+      .box-text { font: 600 12px 'SF Mono', 'Menlo', 'Monaco', monospace; fill: #1a1a1a; text-anchor: middle; }
+      .box-text-en { font: 500 9px 'SF Mono', 'Menlo', 'Monaco', monospace; fill: #666; text-anchor: middle; }
+      .title { font: 600 14px 'SF Mono', 'Menlo', 'Monaco', monospace; fill: #1a1a1a; text-anchor: middle; letter-spacing: 1px; }
+      .annotation { font: 400 9px 'SF Mono', 'Menlo', 'Monaco', monospace; fill: #666; }
+      .step-num { font: 700 16px 'SF Mono', 'Menlo', 'Monaco', monospace; fill: #fff; text-anchor: middle; }
+      .step-title { font: 600 11px 'SF Mono', 'Menlo', 'Monaco', monospace; fill: #1a1a1a; }
+      .detail-text { font: 400 10px 'SF Mono', 'Menlo', 'Monaco', monospace; fill: #1a1a1a; }
+      .user-query { font: 400 10px 'SF Mono', 'Menlo', 'Monaco', monospace; fill: #1a1a1a; font-style: italic; }
+    </style>
+    <marker id="arrow" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#666"/>
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="680" height="560" fill="#fff"/>
+
+  <!-- Title -->
+  <text x="340" y="28" class="title">ORCHESTRATION PROCESS</text>
+  <text x="340" y="45" class="label">オーケストレーション実行4ステップ</text>
+
+  <!-- User Query -->
+  <rect x="140" y="60" width="400" height="35" fill="#fce7f3" stroke="#1a1a1a" stroke-width="1.5" rx="2"/>
+  <text x="340" y="82" class="user-query">"Tesla、BYD、RivianのEV戦略を比較分析"</text>
+
+  <!-- Arrow -->
+  <line x1="340" y1="95" x2="340" y2="120" stroke="#666" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- Step 1: Decomposition -->
+  <g transform="translate(0, 125)">
+    <circle cx="70" cy="50" r="22" fill="#0891b2" stroke="#1a1a1a" stroke-width="1.5"/>
+    <text x="70" y="56" class="step-num">1</text>
+
+    <rect x="100" y="0" width="530" height="100" fill="#dbeafe" stroke="#1a1a1a" stroke-width="1.5" rx="2"/>
+    <text x="365" y="22" class="step-title">タスク分解 DECOMPOSITION</text>
+
+    <g transform="translate(120, 35)">
+      <rect x="0" y="0" width="150" height="25" fill="#fff" stroke="#1a1a1a" stroke-width="1" rx="2"/>
+      <text x="75" y="17" class="detail-text">サブタスク1: Tesla調査</text>
+
+      <rect x="165" y="0" width="150" height="25" fill="#fff" stroke="#1a1a1a" stroke-width="1" rx="2"/>
+      <text x="240" y="17" class="detail-text">サブタスク2: BYD調査</text>
+
+      <rect x="330" y="0" width="150" height="25" fill="#fff" stroke="#1a1a1a" stroke-width="1" rx="2"/>
+      <text x="405" y="17" class="detail-text">サブタスク3: Rivian調査</text>
+
+      <rect x="165" y="35" width="150" height="25" fill="#fef3c7" stroke="#1a1a1a" stroke-width="1" rx="2"/>
+      <text x="240" y="52" class="detail-text">サブタスク4: 比較分析</text>
+      <text x="340" y="52" class="annotation">(1,2,3に依存)</text>
+    </g>
+  </g>
+
+  <!-- Arrow -->
+  <line x1="340" y1="230" x2="340" y2="250" stroke="#666" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- Step 2: Routing -->
+  <g transform="translate(0, 255)">
+    <circle cx="70" cy="40" r="22" fill="#0891b2" stroke="#1a1a1a" stroke-width="1.5"/>
+    <text x="70" y="46" class="step-num">2</text>
+
+    <rect x="100" y="0" width="530" height="80" fill="#a5f3fc" stroke="#1a1a1a" stroke-width="1.5" rx="2"/>
+    <text x="365" y="22" class="step-title">ルーティング決定 ROUTING</text>
+
+    <g transform="translate(120, 32)">
+      <text x="0" y="12" class="detail-text">複雑度評価: 0.6 (中程度)</text>
+      <text x="0" y="28" class="detail-text">サブタスク数: 4</text>
+      <text x="200" y="12" class="detail-text">依存関係あり: はい</text>
+      <text x="200" y="28" class="detail-text">選択戦略:</text>
+      <rect x="275" y="16" width="100" height="20" fill="#fef3c7" stroke="#1a1a1a" stroke-width="1" rx="2"/>
+      <text x="325" y="30" class="box-text" style="font-size: 10px;">DAGWorkflow</text>
+    </g>
+  </g>
+
+  <!-- Arrow -->
+  <line x1="340" y1="340" x2="340" y2="360" stroke="#666" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- Step 3: Execution -->
+  <g transform="translate(0, 365)">
+    <circle cx="70" cy="40" r="22" fill="#0891b2" stroke="#1a1a1a" stroke-width="1.5"/>
+    <text x="70" y="46" class="step-num">3</text>
+
+    <rect x="100" y="0" width="530" height="80" fill="#d1fae5" stroke="#1a1a1a" stroke-width="1.5" rx="2"/>
+    <text x="365" y="22" class="step-title">実行 EXECUTION</text>
+
+    <g transform="translate(120, 35)">
+      <!-- Parallel agents -->
+      <rect x="0" y="0" width="90" height="35" fill="#f9a8d4" stroke="#1a1a1a" stroke-width="1" rx="2"/>
+      <text x="45" y="15" class="annotation">Agent A</text>
+      <text x="45" y="28" class="detail-text">Tesla</text>
+
+      <rect x="100" y="0" width="90" height="35" fill="#67e8f9" stroke="#1a1a1a" stroke-width="1" rx="2"/>
+      <text x="145" y="15" class="annotation">Agent B</text>
+      <text x="145" y="28" class="detail-text">BYD</text>
+
+      <rect x="200" y="0" width="90" height="35" fill="#5eead4" stroke="#1a1a1a" stroke-width="1" rx="2"/>
+      <text x="245" y="15" class="annotation">Agent C</text>
+      <text x="245" y="28" class="detail-text">Rivian</text>
+
+      <!-- Parallel bracket -->
+      <path d="M 0 -5 L 290 -5" stroke="#666" stroke-width="1"/>
+      <text x="145" y="-10" class="annotation" text-anchor="middle">並列実行</text>
+
+      <!-- Sequential agent -->
+      <text x="320" y="18" class="annotation">待機後</text>
+      <rect x="360" y="0" width="110" height="35" fill="#fef3c7" stroke="#1a1a1a" stroke-width="1" rx="2"/>
+      <text x="415" y="15" class="annotation">Agent D</text>
+      <text x="415" y="28" class="detail-text">比較分析</text>
+    </g>
+  </g>
+
+  <!-- Arrow -->
+  <line x1="340" y1="450" x2="340" y2="470" stroke="#666" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- Step 4: Synthesis -->
+  <g transform="translate(0, 475)">
+    <circle cx="70" cy="35" r="22" fill="#0891b2" stroke="#1a1a1a" stroke-width="1.5"/>
+    <text x="70" y="41" class="step-num">4</text>
+
+    <rect x="100" y="0" width="530" height="70" fill="#fef3c7" stroke="#1a1a1a" stroke-width="1.5" rx="2"/>
+    <text x="365" y="22" class="step-title">結果統合 SYNTHESIS</text>
+
+    <g transform="translate(120, 32)">
+      <text x="0" y="12" class="detail-text">4つのAgentの出力を収集</text>
+      <text x="180" y="12" class="detail-text">重複排除、品質フィルタリング</text>
+      <text x="340" y="12" class="detail-text">LLMで最終レポートを統合生成</text>
+    </g>
+  </g>
+</svg>

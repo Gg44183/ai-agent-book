@@ -1,0 +1,90 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 400">
+  <defs>
+    <style>
+      .label { font: 500 10px 'SF Mono', 'Menlo', 'Monaco', monospace; fill: #666; text-anchor: middle; letter-spacing: 0.5px; }
+      .box-text { font: 600 12px 'SF Mono', 'Menlo', 'Monaco', monospace; fill: #1a1a1a; text-anchor: middle; }
+      .title { font: 700 14px 'SF Mono', 'Menlo', 'Monaco', monospace; fill: #1a1a1a; text-anchor: middle; letter-spacing: 1px; }
+      .decision { font: 500 11px 'SF Mono', 'Menlo', 'Monaco', monospace; fill: #1a1a1a; text-anchor: middle; }
+      .branch-label { font: 600 10px 'SF Mono', 'Menlo', 'Monaco', monospace; }
+      .annotation { font: 400 9px 'SF Mono', 'Menlo', 'Monaco', monospace; fill: #666; }
+    </style>
+    <marker id="arrow" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#666"/>
+    </marker>
+    <marker id="arrow-green" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#10b981"/>
+    </marker>
+    <marker id="arrow-red" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#ef4444"/>
+    </marker>
+    <marker id="arrow-loop" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#f59e0b"/>
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="560" height="400" fill="#fff"/>
+
+  <!-- Title -->
+  <text x="280" y="28" class="title">EDIT-TEST-FIX LOOP</text>
+  <text x="280" y="45" class="label">テスト駆動の反復ループ</text>
+
+  <!-- Step 1: Generate Code -->
+  <rect x="180" y="65" width="200" height="50" fill="#fef3c7" stroke="#ca8a04" stroke-width="1.5" rx="4"/>
+  <text x="280" y="90" class="box-text">コード生成</text>
+  <text x="280" y="105" class="label">GENERATE CODE</text>
+
+  <!-- Arrow down -->
+  <line x1="280" y1="115" x2="280" y2="145" stroke="#666" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- Step 2: Run Tests -->
+  <rect x="180" y="150" width="200" height="50" fill="#a5f3fc" stroke="#0891b2" stroke-width="1.5" rx="4"/>
+  <text x="280" y="175" class="box-text">テスト実行</text>
+  <text x="280" y="190" class="label">RUN TESTS</text>
+
+  <!-- Arrow down -->
+  <line x1="280" y1="200" x2="280" y2="225" stroke="#666" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- Decision Diamond -->
+  <polygon points="280,230 360,270 280,310 200,270" fill="#f3f4f6" stroke="#1a1a1a" stroke-width="1.5"/>
+  <text x="280" y="265" class="decision">テスト結果?</text>
+  <text x="280" y="280" class="label">RESULT</text>
+
+  <!-- Pass branch (left) -->
+  <line x1="200" y1="270" x2="120" y2="270" stroke="#10b981" stroke-width="2" marker-end="url(#arrow-green)"/>
+  <text x="160" y="258" class="branch-label" fill="#10b981">成功</text>
+
+  <!-- Complete box -->
+  <rect x="40" y="245" width="75" height="50" fill="#d1fae5" stroke="#10b981" stroke-width="1.5" rx="4"/>
+  <text x="78" y="270" class="box-text" style="font-size: 11px; fill: #047857;">完了</text>
+  <text x="78" y="285" class="label" style="fill: #10b981;">DONE</text>
+
+  <!-- Fail branch (right/down) -->
+  <line x1="360" y1="270" x2="420" y2="270" stroke="#ef4444" stroke-width="2" marker-end="url(#arrow-red)"/>
+  <text x="390" y="258" class="branch-label" fill="#ef4444">失敗</text>
+
+  <!-- Step 3: Analyze Error -->
+  <rect x="425" y="245" width="120" height="50" fill="#fce7f3" stroke="#db2777" stroke-width="1.5" rx="4"/>
+  <text x="485" y="268" class="box-text" style="font-size: 10px;">エラー分析</text>
+  <text x="485" y="283" class="label">ANALYZE</text>
+
+  <!-- Arrow down -->
+  <line x1="485" y1="295" x2="485" y2="320" stroke="#666" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- Step 4: Generate Fix -->
+  <rect x="425" y="325" width="120" height="50" fill="#e9d5ff" stroke="#7c3aed" stroke-width="1.5" rx="4"/>
+  <text x="485" y="348" class="box-text" style="font-size: 10px;">修正コード生成</text>
+  <text x="485" y="363" class="label">FIX CODE</text>
+
+  <!-- Loop back arrow -->
+  <path d="M 425 350 L 90 350 L 90 90 L 175 90"
+        fill="none" stroke="#f59e0b" stroke-width="2" stroke-dasharray="6,3" marker-end="url(#arrow-loop)"/>
+  <text x="90" y="220" class="annotation" style="fill: #f59e0b; writing-mode: vertical-rl; text-orientation: mixed;">テスト実行に戻る</text>
+
+  <!-- Retry limit annotation -->
+  <g transform="translate(30, 340)">
+    <rect x="0" y="0" width="100" height="45" fill="#fef2f2" stroke="#fca5a5" stroke-width="1" rx="4"/>
+    <text x="50" y="18" class="annotation" style="fill: #b91c1c; font-weight: 600;">リトライ制限</text>
+    <text x="50" y="33" class="annotation" style="fill: #b91c1c;">N &lt; MaxRetries</text>
+  </g>
+</svg>

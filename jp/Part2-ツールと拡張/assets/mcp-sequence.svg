@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 580 320">
+  <defs>
+    <style>
+      .label { font: 500 10px 'SF Mono', 'Menlo', 'Monaco', monospace; fill: #666; text-anchor: middle; letter-spacing: 0.5px; }
+      .title { font: 600 12px 'SF Mono', 'Menlo', 'Monaco', monospace; fill: #1a1a1a; letter-spacing: 1px; }
+      .entity { font: 700 12px 'SF Mono', 'Menlo', 'Monaco', monospace; fill: #1a1a1a; text-anchor: middle; }
+      .msg { font: 500 10px 'SF Mono', 'Menlo', 'Monaco', monospace; fill: #1a1a1a; }
+      .note { font: 400 9px 'SF Mono', 'Menlo', 'Monaco', monospace; fill: #666; }
+    </style>
+    <marker id="arrow-right" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#3b82f6"/>
+    </marker>
+    <marker id="arrow-left" markerWidth="8" markerHeight="6" refX="1" refY="3" orient="auto">
+      <polygon points="8 0, 0 3, 8 6" fill="#059669"/>
+    </marker>
+  </defs>
+
+  <!-- White background -->
+  <rect width="580" height="320" fill="#fff"/>
+
+  <!-- Title -->
+  <text x="290" y="25" class="title" text-anchor="middle">MCP CLIENT-SERVER PROTOCOL</text>
+  <text x="290" y="40" class="label">MCP クライアント-サーバー通信フロー</text>
+
+  <!-- Client entity -->
+  <rect x="80" y="55" width="80" height="35" fill="#dbeafe" stroke="#1a1a1a" stroke-width="1.5" rx="2"/>
+  <text x="120" y="78" class="entity">Client</text>
+  <line x1="120" y1="90" x2="120" y2="300" stroke="#1a1a1a" stroke-width="1.5" stroke-dasharray="4,3"/>
+
+  <!-- Server entity -->
+  <rect x="400" y="55" width="80" height="35" fill="#d1fae5" stroke="#1a1a1a" stroke-width="1.5" rx="2"/>
+  <text x="440" y="78" class="entity">Server</text>
+  <line x1="440" y1="90" x2="440" y2="300" stroke="#1a1a1a" stroke-width="1.5" stroke-dasharray="4,3"/>
+
+  <!-- Message 1: initialize -->
+  <line x1="125" y1="110" x2="430" y2="110" stroke="#3b82f6" stroke-width="1.5" marker-end="url(#arrow-right)"/>
+  <text x="280" y="105" class="msg" text-anchor="middle">initialize</text>
+  <text x="480" y="115" class="note">ハンドシェイク：自己紹介</text>
+
+  <!-- Message 2: capabilities -->
+  <line x1="435" y1="135" x2="130" y2="135" stroke="#059669" stroke-width="1.5" marker-end="url(#arrow-left)"/>
+  <text x="280" y="130" class="msg" text-anchor="middle">capabilities</text>
+  <text x="480" y="140" class="note">何をサポート？</text>
+
+  <!-- Message 3: tools/list -->
+  <line x1="125" y1="170" x2="430" y2="170" stroke="#3b82f6" stroke-width="1.5" marker-end="url(#arrow-right)"/>
+  <text x="280" y="165" class="msg" text-anchor="middle">tools/list</text>
+  <text x="480" y="175" class="note">ツール発見</text>
+
+  <!-- Message 4: tool definitions -->
+  <line x1="435" y1="195" x2="130" y2="195" stroke="#059669" stroke-width="1.5" marker-end="url(#arrow-left)"/>
+  <text x="280" y="190" class="msg" text-anchor="middle">tool definitions</text>
+  <text x="480" y="200" class="note">ツール一覧</text>
+
+  <!-- Message 5: tools/call -->
+  <line x1="125" y1="230" x2="430" y2="230" stroke="#3b82f6" stroke-width="1.5" marker-end="url(#arrow-right)"/>
+  <text x="280" y="225" class="msg" text-anchor="middle">tools/call</text>
+  <text x="480" y="235" class="note">ツール呼出</text>
+
+  <!-- Message 6: tool result -->
+  <line x1="435" y1="255" x2="130" y2="255" stroke="#059669" stroke-width="1.5" marker-end="url(#arrow-left)"/>
+  <text x="280" y="250" class="msg" text-anchor="middle">tool result</text>
+  <text x="480" y="260" class="note">結果返却</text>
+
+  <!-- Message 7: resources/read (optional) -->
+  <line x1="125" y1="285" x2="430" y2="285" stroke="#3b82f6" stroke-width="1.5" stroke-dasharray="4,2" marker-end="url(#arrow-right)"/>
+  <text x="280" y="280" class="msg" text-anchor="middle">resources/read</text>
+  <text x="480" y="290" class="note" style="fill: #999;">(可选)</text>
+
+  <!-- Legend -->
+  <g transform="translate(100, 305)">
+    <line x1="0" y1="0" x2="30" y2="0" stroke="#3b82f6" stroke-width="1.5"/>
+    <text x="35" y="4" class="label" text-anchor="start" style="font-size: 8px;">Request</text>
+    <line x1="100" y1="0" x2="130" y2="0" stroke="#059669" stroke-width="1.5"/>
+    <text x="135" y="4" class="label" text-anchor="start" style="font-size: 8px;">Response</text>
+  </g>
+</svg>

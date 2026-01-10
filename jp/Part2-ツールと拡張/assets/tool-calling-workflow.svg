@@ -1,0 +1,98 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 620">
+  <defs>
+    <style>
+      .label { font: 500 10px 'SF Mono', 'Menlo', 'Monaco', monospace; fill: #666; text-anchor: middle; letter-spacing: 0.5px; }
+      .box-text { font: 600 12px 'SF Mono', 'Menlo', 'Monaco', monospace; fill: #1a1a1a; text-anchor: middle; }
+      .box-text-en { font: 500 9px 'SF Mono', 'Menlo', 'Monaco', monospace; fill: #666; text-anchor: middle; }
+      .title { font: 600 14px 'SF Mono', 'Menlo', 'Monaco', monospace; fill: #1a1a1a; text-anchor: middle; letter-spacing: 1px; }
+      .annotation { font: 400 9px 'SF Mono', 'Menlo', 'Monaco', monospace; fill: #666; }
+      .code { font: 500 9px 'SF Mono', 'Menlo', 'Monaco', monospace; fill: #1a1a1a; }
+      .user-text { font: 400 10px 'SF Mono', 'Menlo', 'Monaco', monospace; fill: #1a1a1a; font-style: italic; }
+    </style>
+    <marker id="arrow" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#666"/>
+    </marker>
+    <marker id="arrow-blue" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#3b82f6"/>
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="680" height="620" fill="#fff"/>
+
+  <!-- Title -->
+  <text x="340" y="28" class="title">TOOL CALLING WORKFLOW</text>
+  <text x="340" y="45" class="label">ツール呼出の完全フロー</text>
+
+  <!-- Step 1: User Input -->
+  <rect x="220" y="60" width="240" height="40" fill="#fce7f3" stroke="#1a1a1a" stroke-width="1.5" rx="2"/>
+  <text x="340" y="82" class="user-text">"東京の今日の天気は？"</text>
+  <text x="160" y="82" class="annotation">USER INPUT</text>
+
+  <!-- Arrow -->
+  <line x1="340" y1="100" x2="340" y2="125" stroke="#666" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- Step 2: LLM Receives -->
+  <rect x="180" y="130" width="320" height="45" fill="#dbeafe" stroke="#1a1a1a" stroke-width="1.5" rx="2"/>
+  <text x="340" y="150" class="box-text">LLM 質問 + ツール一覧受取</text>
+  <text x="340" y="165" class="box-text-en">LLM + TOOL SCHEMA (JSON)</text>
+
+  <!-- Arrow -->
+  <line x1="340" y1="175" x2="340" y2="200" stroke="#666" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- Step 3: LLM Decision -->
+  <rect x="180" y="205" width="320" height="60" fill="#a5f3fc" stroke="#1a1a1a" stroke-width="1.5" rx="2"/>
+  <text x="340" y="225" class="box-text">LLM ツール呼出リクエスト出力</text>
+  <text x="340" y="242" class="code">{"tool": "weather", "params": {"city": "東京"}}</text>
+  <text x="340" y="257" class="box-text-en">FUNCTION CALL OUTPUT</text>
+
+  <!-- Arrow -->
+  <line x1="340" y1="265" x2="340" y2="290" stroke="#666" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- Step 4: Parse JSON -->
+  <rect x="220" y="295" width="240" height="40" fill="#e5e7eb" stroke="#1a1a1a" stroke-width="1.5" rx="2"/>
+  <text x="340" y="318" class="box-text">プログラムがJSONをパース</text>
+  <text x="520" y="318" class="annotation">PARSE</text>
+
+  <!-- Arrow -->
+  <line x1="340" y1="335" x2="340" y2="360" stroke="#666" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- Step 5: Validate -->
+  <rect x="180" y="365" width="320" height="40" fill="#fef3c7" stroke="#1a1a1a" stroke-width="1.5" rx="2"/>
+  <text x="340" y="388" class="box-text">パラメータ型変換 + バリデーション</text>
+  <text x="545" y="388" class="annotation">COERCE + VALIDATE</text>
+
+  <!-- Arrow -->
+  <line x1="340" y1="405" x2="340" y2="430" stroke="#666" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- Step 6: Rate Limit -->
+  <rect x="220" y="435" width="240" height="40" fill="#fef3c7" stroke="#1a1a1a" stroke-width="1.5" rx="2"/>
+  <text x="340" y="458" class="box-text">レート制限チェック</text>
+  <text x="520" y="458" class="annotation">RATE LIMIT</text>
+
+  <!-- Arrow -->
+  <line x1="340" y1="475" x2="340" y2="500" stroke="#666" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- Step 7: Execute -->
+  <rect x="180" y="505" width="320" height="40" fill="#d1fae5" stroke="#1a1a1a" stroke-width="1.5" rx="2"/>
+  <text x="340" y="528" class="box-text">ツール実行 (天気API呼出)</text>
+  <text x="545" y="528" class="annotation">EXECUTE</text>
+
+  <!-- Arrow -->
+  <line x1="340" y1="545" x2="340" y2="570" stroke="#3b82f6" stroke-width="1.5" marker-end="url(#arrow-blue)"/>
+
+  <!-- Step 8: Return to LLM -->
+  <rect x="180" y="575" width="320" height="40" fill="#dbeafe" stroke="#1a1a1a" stroke-width="1.5" rx="2"/>
+  <text x="340" y="598" class="box-text">結果をLLMに戻す → ユーザーへ回答</text>
+
+  <!-- Side annotations - vertical flow -->
+  <g transform="translate(90, 200)">
+    <line x1="0" y1="0" x2="0" y2="380" stroke="#e5e7eb" stroke-width="2"/>
+    <text x="-10" y="190" class="annotation" style="writing-mode: vertical-rl; text-orientation: mixed; fill: #999;">AGENT RUNTIME</text>
+  </g>
+
+  <!-- Bracket for validation steps -->
+  <path d="M 550 365 L 560 365 L 560 475 L 550 475" fill="none" stroke="#f59e0b" stroke-width="1.5"/>
+  <text x="570" y="425" class="annotation" fill="#f59e0b">安全層</text>
+  <text x="570" y="438" class="annotation" fill="#f59e0b">SAFETY</text>
+</svg>

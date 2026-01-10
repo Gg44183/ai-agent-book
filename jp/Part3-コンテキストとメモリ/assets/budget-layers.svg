@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 580 300">
+  <defs>
+    <style>
+      .label { font: 500 10px 'SF Mono', 'Menlo', 'Monaco', monospace; fill: #666; text-anchor: middle; letter-spacing: 0.5px; }
+      .box-text { font: 600 13px 'SF Mono', 'Menlo', 'Monaco', monospace; fill: #1a1a1a; text-anchor: middle; }
+      .title { font: 600 12px 'SF Mono', 'Menlo', 'Monaco', monospace; fill: #1a1a1a; letter-spacing: 1px; }
+      .budget-label { font: 700 11px 'SF Mono', 'Menlo', 'Monaco', monospace; fill: #1a1a1a; text-anchor: start; }
+      .budget-value { font: 500 10px 'SF Mono', 'Menlo', 'Monaco', monospace; fill: #666; text-anchor: start; }
+    </style>
+    <!-- Nested layer patterns -->
+    <pattern id="session-pattern" width="8" height="8" patternUnits="userSpaceOnUse">
+      <circle cx="4" cy="4" r="1" fill="#7c3aed" opacity="0.15"/>
+    </pattern>
+    <pattern id="task-pattern" width="6" height="6" patternUnits="userSpaceOnUse">
+      <line x1="0" y1="6" x2="6" y2="0" stroke="#0891b2" stroke-width="0.5" opacity="0.2"/>
+    </pattern>
+    <pattern id="agent-pattern" width="4" height="4" patternUnits="userSpaceOnUse">
+      <line x1="0" y1="2" x2="4" y2="2" stroke="#059669" stroke-width="0.4" opacity="0.25"/>
+    </pattern>
+  </defs>
+
+  <!-- White background -->
+  <rect width="580" height="300" fill="#fff"/>
+
+  <!-- Title -->
+  <text x="290" y="28" class="title" text-anchor="middle">MULTI-LAYER BUDGET ARCHITECTURE</text>
+  <text x="290" y="44" class="label">多層予算アーキテクチャ</text>
+
+  <!-- Session layer (outermost - purple) -->
+  <rect x="40" y="65" width="500" height="190" fill="#ede9fe" stroke="#1a1a1a" stroke-width="2" rx="4"/>
+  <rect x="40" y="65" width="500" height="190" fill="url(#session-pattern)" rx="4"/>
+  <text x="60" y="90" class="budget-label">Session 予算</text>
+  <text x="60" y="105" class="budget-value">(200K tokens)</text>
+
+  <!-- Task layer (middle - cyan) -->
+  <rect x="65" y="115" width="450" height="125" fill="#cffafe" stroke="#1a1a1a" stroke-width="1.5" rx="3"/>
+  <rect x="65" y="115" width="450" height="125" fill="url(#task-pattern)" rx="3"/>
+  <text x="85" y="138" class="budget-label">Task 予算</text>
+  <text x="85" y="153" class="budget-value">(200K tokens)</text>
+
+  <!-- Agent layers (innermost - green) -->
+  <g transform="translate(95, 165)">
+    <rect x="0" y="0" width="120" height="60" fill="#d1fae5" stroke="#1a1a1a" stroke-width="1" rx="2"/>
+    <rect x="0" y="0" width="120" height="60" fill="url(#agent-pattern)" rx="2"/>
+    <text x="60" y="25" class="box-text" style="font-size: 11px;">Agent 予算</text>
+    <text x="60" y="45" class="label">(50K)</text>
+  </g>
+
+  <g transform="translate(230, 165)">
+    <rect x="0" y="0" width="120" height="60" fill="#d1fae5" stroke="#1a1a1a" stroke-width="1" rx="2"/>
+    <rect x="0" y="0" width="120" height="60" fill="url(#agent-pattern)" rx="2"/>
+    <text x="60" y="25" class="box-text" style="font-size: 11px;">Agent 予算</text>
+    <text x="60" y="45" class="label">(50K)</text>
+  </g>
+
+  <g transform="translate(365, 165)">
+    <rect x="0" y="0" width="120" height="60" fill="#d1fae5" stroke="#1a1a1a" stroke-width="1" rx="2"/>
+    <rect x="0" y="0" width="120" height="60" fill="url(#agent-pattern)" rx="2"/>
+    <text x="60" y="25" class="box-text" style="font-size: 11px;">Agent 予算</text>
+    <text x="60" y="45" class="label">(50K)</text>
+  </g>
+
+  <!-- Legend -->
+  <g transform="translate(100, 270)">
+    <rect x="0" y="0" width="12" height="12" fill="#ede9fe" stroke="#1a1a1a" stroke-width="0.5"/>
+    <text x="18" y="10" class="label" text-anchor="start" style="font-size: 9px;">Session (セッション総予算)</text>
+
+    <rect x="140" y="0" width="12" height="12" fill="#cffafe" stroke="#1a1a1a" stroke-width="0.5"/>
+    <text x="158" y="10" class="label" text-anchor="start" style="font-size: 9px;">Task (単一タスク予算)</text>
+
+    <rect x="280" y="0" width="12" height="12" fill="#d1fae5" stroke="#1a1a1a" stroke-width="0.5"/>
+    <text x="298" y="10" class="label" text-anchor="start" style="font-size: 9px;">Agent (単一Agent予算)</text>
+  </g>
+</svg>

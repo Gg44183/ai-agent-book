@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 380">
+  <defs>
+    <style>
+      .label { font: 500 10px 'SF Mono', 'Menlo', 'Monaco', monospace; fill: #666; text-anchor: middle; letter-spacing: 0.5px; }
+      .box-text { font: 600 12px 'SF Mono', 'Menlo', 'Monaco', monospace; fill: #1a1a1a; text-anchor: middle; }
+      .box-text-sm { font: 500 10px 'SF Mono', 'PingFang SC', monospace; fill: #444; text-anchor: middle; }
+      .title { font: 700 16px 'SF Mono', 'PingFang SC', sans-serif; fill: #1a1a1a; text-anchor: middle; }
+      .cap-blocked { font: 500 9px 'SF Mono', monospace; fill: #ef4444; text-anchor: start; }
+      .cap-allowed { font: 500 9px 'SF Mono', monospace; fill: #10b981; text-anchor: start; }
+    </style>
+  </defs>
+
+  <!-- Background -->
+  <rect width="680" height="380" fill="#fff"/>
+
+  <!-- Title -->
+  <text x="340" y="28" class="title">WASI サンドボックスアーキテクチャ</text>
+  <text x="340" y="45" class="label">WEBASSEMBLY SYSTEM INTERFACE SANDBOX</text>
+
+  <!-- Outer: Host Application -->
+  <rect x="40" y="60" width="600" height="300" fill="#f8fafc" stroke="#1a1a1a" stroke-width="1.5" rx="4"/>
+  <text x="340" y="82" class="box-text">Host Application (Agent Core)</text>
+
+  <!-- Middle: Wasmtime Runtime -->
+  <rect x="60" y="95" width="560" height="250" fill="#dbeafe" stroke="#3b82f6" stroke-width="1.5" rx="3"/>
+  <text x="340" y="117" class="box-text">Wasmtime Runtime (Rust)</text>
+
+  <!-- Inner: WASI Sandbox -->
+  <rect x="80" y="130" width="520" height="195" fill="#67e8f9" stroke="#1a1a1a" stroke-width="1.5" rx="3"/>
+  <text x="340" y="152" class="box-text">WASI Sandbox</text>
+
+  <!-- WASM Modules -->
+  <rect x="100" y="165" width="140" height="55" fill="#fce7f3" stroke="#1a1a1a" stroke-width="1" rx="2"/>
+  <text x="170" y="188" class="box-text-sm">Python WASM</text>
+  <text x="170" y="205" class="label">INTERPRETER</text>
+
+  <rect x="270" y="165" width="140" height="55" fill="#d1fae5" stroke="#1a1a1a" stroke-width="1" rx="2"/>
+  <text x="340" y="188" class="box-text-sm">Tool WASM</text>
+  <text x="340" y="205" class="label">COMPILED</text>
+
+  <rect x="440" y="165" width="140" height="55" fill="#fef3c7" stroke="#1a1a1a" stroke-width="1" rx="2"/>
+  <text x="510" y="188" class="box-text-sm">User WASM</text>
+  <text x="510" y="205" class="label">UNTRUSTED</text>
+
+  <!-- WASI Capabilities Box -->
+  <rect x="100" y="235" width="480" height="80" fill="#fff" stroke="#1a1a1a" stroke-width="1" rx="2"/>
+  <text x="340" y="255" class="box-text-sm">WASI Capabilities (ケイパビリティモデル)</text>
+
+  <!-- Blocked capabilities (left) -->
+  <text x="120" y="275" class="cap-blocked">X Network (blocked)</text>
+  <text x="120" y="290" class="cap-blocked">X Random filesystem</text>
+  <text x="120" y="305" class="cap-blocked">X Environment vars</text>
+
+  <!-- Allowed capabilities (right) -->
+  <text x="350" y="275" class="cap-allowed">O Stdin/Stdout (piped)</text>
+  <text x="350" y="290" class="cap-allowed">O Preopened dirs (R/O)</text>
+  <text x="350" y="305" class="cap-allowed">O Memory limit / Fuel</text>
+
+  <!-- Legend -->
+  <rect x="480" y="340" width="160" height="35" fill="#f8fafc" stroke="#e5e7eb" stroke-width="1" rx="3"/>
+  <text x="500" y="355" class="cap-blocked">X = 禁止</text>
+  <text x="560" y="355" class="cap-allowed">O = 許可</text>
+  <text x="490" y="370" class="label" style="text-anchor: start;">デフォルト無権限、明示的付与</text>
+</svg>

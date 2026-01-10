@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 380">
+  <defs>
+    <style>
+      .label { font: 500 10px 'SF Mono', 'Menlo', 'Monaco', monospace; fill: #666; text-anchor: middle; letter-spacing: 0.5px; }
+      .box-text { font: 600 14px 'SF Mono', 'Menlo', 'Monaco', monospace; fill: #1a1a1a; text-anchor: middle; }
+      .box-text-cn { font: 600 12px 'SF Mono', 'PingFang SC', 'Microsoft YaHei', sans-serif; fill: #666; text-anchor: middle; }
+      .title { font: 700 16px 'SF Mono', 'PingFang SC', sans-serif; fill: #1a1a1a; text-anchor: middle; }
+      .annotation { font: 400 10px 'SF Mono', 'PingFang SC', monospace; fill: #666; }
+      .loop-label { font: 500 11px 'SF Mono', 'PingFang SC', monospace; fill: #666; }
+      .termination { font: 400 11px 'SF Mono', 'PingFang SC', monospace; fill: #888; text-anchor: middle; }
+    </style>
+    <marker id="arrow" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#666"/>
+    </marker>
+    <marker id="arrow-loop" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#3b82f6"/>
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="680" height="380" fill="#fff"/>
+
+  <!-- Main container box -->
+  <rect x="40" y="30" width="600" height="280" fill="none" stroke="#e5e7eb" stroke-width="1.5" rx="4"/>
+
+  <!-- Title -->
+  <text x="340" y="65" class="title">ReAct ループ</text>
+  <text x="340" y="82" class="label">REASONING + ACTING LOOP</text>
+
+  <!-- REASON Box -->
+  <rect x="100" y="120" width="140" height="80" fill="#67e8f9" stroke="#1a1a1a" stroke-width="1.5" rx="2"/>
+  <text x="170" y="158" class="box-text">REASON</text>
+  <text x="170" y="178" class="box-text-cn">思考</text>
+
+  <!-- Arrow: REASON -> ACT -->
+  <line x1="240" y1="160" x2="265" y2="160" stroke="#666" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- ACT Box -->
+  <rect x="270" y="120" width="140" height="80" fill="#f9a8d4" stroke="#1a1a1a" stroke-width="1.5" rx="2"/>
+  <text x="340" y="158" class="box-text">ACT</text>
+  <text x="340" y="178" class="box-text-cn">行動</text>
+
+  <!-- Arrow: ACT -> OBSERVE -->
+  <line x1="410" y1="160" x2="435" y2="160" stroke="#666" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- OBSERVE Box -->
+  <rect x="440" y="120" width="140" height="80" fill="#5eead4" stroke="#1a1a1a" stroke-width="1.5" rx="2"/>
+  <text x="510" y="158" class="box-text">OBSERVE</text>
+  <text x="510" y="178" class="box-text-cn">観察</text>
+
+  <!-- Loop back arrow (OBSERVE -> REASON) -->
+  <path d="M 510 200 L 510 245 L 170 245 L 170 200"
+        fill="none" stroke="#3b82f6" stroke-width="1.5" stroke-dasharray="6,3" marker-end="url(#arrow-loop)"/>
+
+  <!-- Loop label -->
+  <text x="340" y="262" class="loop-label">ループ継続 / LOOP CONTINUES</text>
+
+  <!-- Termination conditions -->
+  <text x="340" y="295" class="termination">終了条件：タスク完了 / 最大ターン数到達 / 予算切れ / 進展なし</text>
+
+  <!-- Step numbers -->
+  <circle cx="100" cy="120" r="12" fill="#fff" stroke="#1a1a1a" stroke-width="1"/>
+  <text x="100" y="124" class="label">1</text>
+
+  <circle cx="270" cy="120" r="12" fill="#fff" stroke="#1a1a1a" stroke-width="1"/>
+  <text x="270" y="124" class="label">2</text>
+
+  <circle cx="440" cy="120" r="12" fill="#fff" stroke="#1a1a1a" stroke-width="1"/>
+  <text x="440" y="124" class="label">3</text>
+
+  <!-- Annotations for each phase -->
+  <text x="170" y="108" class="annotation">現状分析、次を決める</text>
+  <text x="340" y="108" class="annotation">ツール呼出、アクション実行</text>
+  <text x="510" y="108" class="annotation">結果記録、次ターンへ</text>
+
+  <!-- Footer note -->
+  <text x="340" y="345" class="label">SOURCE: REACT: SYNERGIZING REASONING AND ACTING IN LANGUAGE MODELS (2022)</text>
+  <text x="340" y="360" class="label">ARXIV:2210.03629</text>
+</svg>

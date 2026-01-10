@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 380">
+  <defs>
+    <style>
+      .label { font: 500 10px 'SF Mono', 'Menlo', 'Monaco', monospace; fill: #666; text-anchor: middle; letter-spacing: 0.5px; }
+      .box-text { font: 600 14px 'SF Mono', 'Menlo', 'Monaco', monospace; fill: #1a1a1a; text-anchor: middle; }
+      .role-title { font: 700 12px 'SF Mono', monospace; fill: #1a1a1a; text-anchor: start; }
+      .role-num { font: 700 11px 'SF Mono', monospace; fill: #fff; text-anchor: middle; }
+      .feature { font: 400 10px 'SF Mono', 'PingFang SC', monospace; fill: #444; text-anchor: start; }
+      .title { font: 700 16px 'SF Mono', 'PingFang SC', sans-serif; fill: #1a1a1a; text-anchor: middle; }
+    </style>
+  </defs>
+
+  <!-- Background -->
+  <rect width="680" height="380" fill="#fff"/>
+
+  <!-- Title -->
+  <text x="340" y="30" class="title">オーケストレーター4つの責務</text>
+  <text x="340" y="47" class="label">ORCHESTRATOR RESPONSIBILITIES</text>
+
+  <!-- Main container -->
+  <rect x="40" y="65" width="600" height="290" fill="#f8fafc" stroke="#1a1a1a" stroke-width="1.5" rx="4"/>
+  <text x="340" y="90" class="box-text">Orchestrator</text>
+
+  <!-- Role 1: DECOMPOSE -->
+  <rect x="60" y="110" width="270" height="100" fill="#67e8f9" stroke="#1a1a1a" stroke-width="1" rx="3"/>
+  <circle cx="80" cy="130" r="12" fill="#1a1a1a"/>
+  <text x="80" y="134" class="role-num">1</text>
+  <text x="100" y="134" class="role-title">DECOMPOSE 分解</text>
+  <text x="75" y="158" class="feature">├── ユーザー意図の理解</text>
+  <text x="75" y="175" class="feature">├── サブタスクへの分解</text>
+  <text x="75" y="192" class="feature">└── 依存関係の識別</text>
+
+  <!-- Role 2: DISPATCH -->
+  <rect x="350" y="110" width="270" height="100" fill="#f9a8d4" stroke="#1a1a1a" stroke-width="1" rx="3"/>
+  <circle cx="370" cy="130" r="12" fill="#1a1a1a"/>
+  <text x="370" y="134" class="role-num">2</text>
+  <text x="390" y="134" class="role-title">DISPATCH ディスパッチ</text>
+  <text x="365" y="158" class="feature">├── サブタスクにAgentを割当</text>
+  <text x="365" y="175" class="feature">├── トークン予算の配分</text>
+  <text x="365" y="192" class="feature">└── タイムアウトとリトライ設定</text>
+
+  <!-- Role 3: COORDINATE -->
+  <rect x="60" y="225" width="270" height="100" fill="#5eead4" stroke="#1a1a1a" stroke-width="1" rx="3"/>
+  <circle cx="80" cy="245" r="12" fill="#1a1a1a"/>
+  <text x="80" y="249" class="role-num">3</text>
+  <text x="100" y="249" class="role-title">COORDINATE 調整</text>
+  <text x="75" y="273" class="feature">├── 実行順序の管理</text>
+  <text x="75" y="290" class="feature">├── 依存関係の処理</text>
+  <text x="75" y="307" class="feature">└── 実行状態の監視</text>
+
+  <!-- Role 4: SYNTHESIZE -->
+  <rect x="350" y="225" width="270" height="100" fill="#fde047" stroke="#1a1a1a" stroke-width="1" rx="3"/>
+  <circle cx="370" cy="245" r="12" fill="#1a1a1a"/>
+  <text x="370" y="249" class="role-num">4</text>
+  <text x="390" y="249" class="role-title">SYNTHESIZE 統合</text>
+  <text x="365" y="273" class="feature">├── 各Agentの結果を収集</text>
+  <text x="365" y="290" class="feature">├── 重複排除、フィルタ、ソート</text>
+  <text x="365" y="307" class="feature">└── 統一された回答を生成</text>
+
+  <!-- Flow arrows -->
+  <path d="M 195 210 L 195 220 L 485 220 L 485 225" fill="none" stroke="#666" stroke-width="1" stroke-dasharray="4,2"/>
+  <path d="M 330 160 L 345 160" fill="none" stroke="#666" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <path d="M 195 210 L 195 225" fill="none" stroke="#666" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- Footer analogy -->
+  <text x="340" y="370" class="label">例え：レストランの料理長 - タスク配分、調理調整、品質確保</text>
+</svg>

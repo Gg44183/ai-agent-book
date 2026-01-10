@@ -1,0 +1,101 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 380">
+  <defs>
+    <style>
+      .label { font: 500 10px 'SF Mono', 'Menlo', 'Monaco', monospace; fill: #666; text-anchor: middle; letter-spacing: 0.5px; }
+      .box-text { font: 600 12px 'SF Mono', 'Menlo', 'Monaco', monospace; fill: #1a1a1a; text-anchor: middle; }
+      .title { font: 600 14px 'SF Mono', 'Menlo', 'Monaco', monospace; fill: #1a1a1a; text-anchor: middle; letter-spacing: 1px; }
+      .annotation { font: 400 9px 'SF Mono', 'Menlo', 'Monaco', monospace; fill: #666; }
+      .time-label { font: 600 10px 'SF Mono', 'Menlo', 'Monaco', monospace; fill: #1a1a1a; }
+      .agent-label { font: 500 10px 'SF Mono', 'Menlo', 'Monaco', monospace; fill: #1a1a1a; }
+      .result { font: 700 14px 'SF Mono', 'Menlo', 'Monaco', monospace; fill: #1a1a1a; text-anchor: middle; }
+      .section-title { font: 600 11px 'SF Mono', 'Menlo', 'Monaco', monospace; fill: #1a1a1a; }
+    </style>
+    <pattern id="hatch" width="4" height="4" patternUnits="userSpaceOnUse">
+      <path d="M-1,1 l2,-2 M0,4 l4,-4 M3,5 l2,-2" stroke="#999" stroke-width="0.5" opacity="0.3"/>
+    </pattern>
+  </defs>
+
+  <!-- Background -->
+  <rect width="680" height="380" fill="#fff"/>
+
+  <!-- Title -->
+  <text x="340" y="28" class="title">SERIAL VS PARALLEL EXECUTION</text>
+  <text x="340" y="45" class="label">シリアル vs パラレル実行の比較</text>
+
+  <!-- Time axis -->
+  <line x1="120" y1="70" x2="620" y2="70" stroke="#e5e7eb" stroke-width="1"/>
+  <text x="70" y="74" class="annotation">TIME</text>
+
+  <!-- Time markers -->
+  <g class="time-label">
+    <text x="120" y="85">0s</text>
+    <text x="220" y="85">20s</text>
+    <text x="320" y="85">40s</text>
+    <text x="420" y="85">60s</text>
+    <text x="520" y="85">80s</text>
+  </g>
+
+  <!-- Section 1: Single Agent (Serial) -->
+  <text x="70" y="115" class="section-title">単一AGENT</text>
+  <text x="70" y="128" class="annotation">SERIAL</text>
+
+  <!-- Serial execution bars -->
+  <g transform="translate(120, 140)">
+    <!-- Tesla -->
+    <rect x="0" y="0" width="100" height="25" fill="#f9a8d4" stroke="#1a1a1a" stroke-width="1.5" rx="2"/>
+    <text x="50" y="17" class="agent-label">Tesla</text>
+
+    <!-- BYD -->
+    <rect x="100" y="0" width="100" height="25" fill="#67e8f9" stroke="#1a1a1a" stroke-width="1.5" rx="2"/>
+    <text x="150" y="17" class="agent-label">BYD</text>
+
+    <!-- Rivian -->
+    <rect x="200" y="0" width="100" height="25" fill="#5eead4" stroke="#1a1a1a" stroke-width="1.5" rx="2"/>
+    <text x="250" y="17" class="agent-label">Rivian</text>
+  </g>
+
+  <!-- Total time indicator for serial -->
+  <line x1="120" y1="175" x2="420" y2="175" stroke="#ef4444" stroke-width="2"/>
+  <line x1="120" y1="170" x2="120" y2="180" stroke="#ef4444" stroke-width="2"/>
+  <line x1="420" y1="170" x2="420" y2="180" stroke="#ef4444" stroke-width="2"/>
+  <rect x="230" y="180" width="80" height="22" fill="#fff" stroke="none"/>
+  <text x="270" y="195" class="result" fill="#ef4444">60s</text>
+
+  <!-- Section 2: Multi Agent (Parallel) -->
+  <text x="70" y="235" class="section-title">複数AGENT</text>
+  <text x="70" y="248" class="annotation">PARALLEL</text>
+
+  <!-- Parallel execution bars -->
+  <g transform="translate(120, 260)">
+    <!-- Agent A: Tesla -->
+    <text x="-40" y="17" class="agent-label">A</text>
+    <rect x="0" y="0" width="100" height="25" fill="#f9a8d4" stroke="#1a1a1a" stroke-width="1.5" rx="2"/>
+    <text x="50" y="17" class="agent-label">Tesla</text>
+
+    <!-- Agent B: BYD -->
+    <text x="-40" y="47" class="agent-label">B</text>
+    <rect x="0" y="30" width="100" height="25" fill="#67e8f9" stroke="#1a1a1a" stroke-width="1.5" rx="2"/>
+    <text x="50" y="47" class="agent-label">BYD</text>
+
+    <!-- Agent C: Rivian -->
+    <text x="-40" y="77" class="agent-label">C</text>
+    <rect x="0" y="60" width="100" height="25" fill="#5eead4" stroke="#1a1a1a" stroke-width="1.5" rx="2"/>
+    <text x="50" y="77" class="agent-label">Rivian</text>
+  </g>
+
+  <!-- Simultaneous start indicator -->
+  <line x1="120" y1="260" x2="120" y2="345" stroke="#3b82f6" stroke-width="2" stroke-dasharray="4,2"/>
+  <text x="125" y="355" class="annotation" fill="#3b82f6">同時開始</text>
+
+  <!-- Total time indicator for parallel -->
+  <line x1="120" y1="350" x2="220" y2="350" stroke="#10b981" stroke-width="2"/>
+  <line x1="120" y1="345" x2="120" y2="355" stroke="#10b981" stroke-width="2"/>
+  <line x1="220" y1="345" x2="220" y2="355" stroke="#10b981" stroke-width="2"/>
+  <rect x="145" y="355" width="50" height="22" fill="#fff" stroke="none"/>
+  <text x="170" y="370" class="result" fill="#10b981">20s</text>
+
+  <!-- Savings callout -->
+  <rect x="500" y="280" width="130" height="60" fill="#d1fae5" stroke="#10b981" stroke-width="2" rx="4"/>
+  <text x="565" y="305" class="result" fill="#10b981">40s削減</text>
+  <text x="565" y="325" class="label" fill="#10b981">SAVED 67%</text>
+</svg>

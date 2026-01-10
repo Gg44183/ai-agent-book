@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 340">
+  <defs>
+    <style>
+      .label { font: 500 9px 'SF Mono', 'Menlo', 'Monaco', monospace; fill: #666; text-anchor: middle; }
+      .box-text { font: 600 11px 'SF Mono', 'Menlo', 'Monaco', monospace; fill: #1a1a1a; text-anchor: middle; }
+      .desc { font: 400 8px 'SF Mono', 'Menlo', 'Monaco', monospace; fill: #666; text-anchor: start; }
+      .layer { font: 500 9px 'SF Mono', 'Menlo', 'Monaco', monospace; fill: #7c3aed; text-anchor: start; }
+    </style>
+    <marker id="arrow-sup" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#666"/>
+    </marker>
+  </defs>
+  <rect width="520" height="340" fill="#fff"/>
+
+  <!-- Title -->
+  <text x="260" y="22" class="label" style="font-size: 11px; fill: #1a1a1a;">SUPERVISOR WITH HUMAN-IN-THE-LOOP</text>
+
+  <!-- Outer container -->
+  <rect x="40" y="35" width="440" height="280" fill="#f8fafc" stroke="#1a1a1a" stroke-width="1.5" rx="4"/>
+
+  <!-- Human layer (top) -->
+  <rect x="180" y="55" width="160" height="50" fill="#fce7f3" stroke="#1a1a1a" stroke-width="1.5" rx="2"/>
+  <text x="260" y="77" class="box-text">Human</text>
+  <text x="260" y="92" class="label">(Approver)</text>
+  <text x="360" y="75" class="layer">← 最上位階層</text>
+  <text x="360" y="88" class="desc">戦略的決定 / 高リスク承認</text>
+
+  <!-- Arrow down -->
+  <line x1="260" y1="105" x2="260" y2="125" stroke="#666" stroke-width="1.5" marker-end="url(#arrow-sup)"/>
+  <text x="290" y="120" class="label" style="font-size: 8px;">escalate / approve</text>
+
+  <!-- Supervisor layer (middle) -->
+  <rect x="180" y="130" width="160" height="50" fill="#a5f3fc" stroke="#1a1a1a" stroke-width="1.5" rx="2"/>
+  <text x="260" y="152" class="box-text">Supervisor</text>
+  <text x="260" y="167" class="label">(Agent)</text>
+  <text x="360" y="150" class="layer">← 戦術層</text>
+  <text x="360" y="163" class="desc">タスク調整 / リソース配分</text>
+
+  <!-- Arrows to workers -->
+  <line x1="260" y1="180" x2="260" y2="200" stroke="#666" stroke-width="1"/>
+  <line x1="120" y1="200" x2="400" y2="200" stroke="#666" stroke-width="1"/>
+  <line x1="120" y1="200" x2="120" y2="220" stroke="#666" stroke-width="1.5" marker-end="url(#arrow-sup)"/>
+  <line x1="260" y1="200" x2="260" y2="220" stroke="#666" stroke-width="1.5" marker-end="url(#arrow-sup)"/>
+  <line x1="400" y1="200" x2="400" y2="220" stroke="#666" stroke-width="1.5" marker-end="url(#arrow-sup)"/>
+
+  <!-- Worker layer (bottom) -->
+  <rect x="70" y="225" width="100" height="50" fill="#d1fae5" stroke="#1a1a1a" stroke-width="1" rx="2"/>
+  <text x="120" y="247" class="box-text">Worker</text>
+  <text x="120" y="262" class="label">Agent A</text>
+
+  <rect x="210" y="225" width="100" height="50" fill="#d1fae5" stroke="#1a1a1a" stroke-width="1" rx="2"/>
+  <text x="260" y="247" class="box-text">Worker</text>
+  <text x="260" y="262" class="label">Agent B</text>
+
+  <rect x="350" y="225" width="100" height="50" fill="#d1fae5" stroke="#1a1a1a" stroke-width="1" rx="2"/>
+  <text x="400" y="247" class="box-text">Worker</text>
+  <text x="400" y="262" class="label">Agent C</text>
+
+  <text x="460" y="250" class="layer">← 実行層</text>
+
+  <!-- Footer -->
+  <text x="260" y="305" class="label">人間は階層構造のノード、応答は遅いが最高権限を持つ</text>
+</svg>

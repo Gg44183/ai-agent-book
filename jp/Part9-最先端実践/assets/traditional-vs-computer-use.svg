@@ -1,0 +1,94 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 340">
+  <defs>
+    <style>
+      .label { font: 500 10px 'SF Mono', 'Menlo', 'Monaco', monospace; fill: #666; text-anchor: middle; letter-spacing: 0.5px; }
+      .box-text { font: 600 12px 'SF Mono', 'Menlo', 'Monaco', monospace; fill: #1a1a1a; text-anchor: middle; }
+      .title { font: 700 14px 'SF Mono', 'Menlo', 'Monaco', monospace; fill: #1a1a1a; text-anchor: middle; letter-spacing: 1px; }
+      .section-title { font: 700 12px 'SF Mono', 'Menlo', 'Monaco', monospace; fill: #1a1a1a; text-anchor: middle; }
+      .annotation { font: 400 9px 'SF Mono', 'Menlo', 'Monaco', monospace; fill: #666; }
+      .vs-text { font: 800 20px 'SF Mono', 'Menlo', 'Monaco', monospace; fill: #7c3aed; text-anchor: middle; }
+    </style>
+    <marker id="arrow-gray" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#9ca3af"/>
+    </marker>
+    <marker id="arrow-cyan" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#0891b2"/>
+    </marker>
+    <!-- API pattern -->
+    <pattern id="api-lines" width="8" height="8" patternUnits="userSpaceOnUse">
+      <line x1="0" y1="8" x2="8" y2="0" stroke="#9ca3af" stroke-width="0.5" opacity="0.3"/>
+    </pattern>
+    <!-- Vision pattern -->
+    <pattern id="vision-dots" width="6" height="6" patternUnits="userSpaceOnUse">
+      <circle cx="3" cy="3" r="1" fill="#0891b2" opacity="0.3"/>
+    </pattern>
+  </defs>
+
+  <!-- Background -->
+  <rect width="700" height="340" fill="#fff"/>
+
+  <!-- Title -->
+  <text x="350" y="28" class="title">TRADITIONAL AGENT VS COMPUTER USE</text>
+
+  <!-- Divider -->
+  <line x1="350" y1="50" x2="350" y2="320" stroke="#e5e7eb" stroke-width="2" stroke-dasharray="6,4"/>
+  <text x="350" y="55" class="vs-text">VS</text>
+
+  <!-- LEFT: Traditional Agent -->
+  <g transform="translate(30, 70)">
+    <text x="145" y="0" class="section-title" fill="#6b7280">従来型 Agent</text>
+    <text x="145" y="15" class="label">API-DRIVEN</text>
+
+    <!-- API Call Box -->
+    <rect x="45" y="35" width="200" height="50" fill="#f3f4f6" stroke="#9ca3af" stroke-width="1.5" rx="4"/>
+    <rect x="45" y="35" width="200" height="50" fill="url(#api-lines)" rx="4"/>
+    <text x="145" y="58" class="box-text" fill="#4b5563">API 呼び出し</text>
+    <text x="145" y="73" class="label">PREDEFINED INTERFACE</text>
+
+    <!-- Arrow -->
+    <line x1="145" y1="85" x2="145" y2="110" stroke="#9ca3af" stroke-width="1.5" marker-end="url(#arrow-gray)"/>
+
+    <!-- Structured Response -->
+    <rect x="45" y="115" width="200" height="50" fill="#e5e7eb" stroke="#9ca3af" stroke-width="1.5" rx="4"/>
+    <text x="145" y="138" class="box-text" fill="#4b5563">構造化レスポンス</text>
+    <text x="145" y="153" class="label">JSON/XML</text>
+
+    <!-- Limitations -->
+    <g transform="translate(20, 185)">
+      <rect x="0" y="0" width="250" height="70" fill="#fef2f2" stroke="#fca5a5" stroke-width="1" rx="4"/>
+      <text x="125" y="18" class="annotation" style="fill: #b91c1c; font-weight: 600;">制限事項</text>
+      <text x="125" y="35" class="annotation" style="fill: #b91c1c;">❌ 事前定義インターフェース必要</text>
+      <text x="125" y="50" class="annotation" style="fill: #b91c1c;">❌ レガシーシステム対応不可</text>
+      <text x="125" y="65" class="annotation" style="fill: #b91c1c;">❌ UI変更時コード更新必要</text>
+    </g>
+  </g>
+
+  <!-- RIGHT: Computer Use Agent -->
+  <g transform="translate(380, 70)">
+    <text x="145" y="0" class="section-title" fill="#0891b2">Computer Use</text>
+    <text x="145" y="15" class="label" style="fill: #0891b2;">VISION-DRIVEN</text>
+
+    <!-- Screenshot Box -->
+    <rect x="45" y="35" width="200" height="50" fill="#a5f3fc" stroke="#0891b2" stroke-width="1.5" rx="4"/>
+    <rect x="45" y="35" width="200" height="50" fill="url(#vision-dots)" rx="4"/>
+    <text x="145" y="55" class="box-text" style="fill: #0e7490;">スクリーンショット → UI理解</text>
+    <text x="145" y="73" class="label" style="fill: #0891b2;">VISUAL UNDERSTANDING</text>
+
+    <!-- Arrow -->
+    <line x1="145" y1="85" x2="145" y2="110" stroke="#0891b2" stroke-width="1.5" marker-end="url(#arrow-cyan)"/>
+
+    <!-- Action Box -->
+    <rect x="45" y="115" width="200" height="50" fill="#67e8f9" stroke="#0891b2" stroke-width="1.5" rx="4"/>
+    <text x="145" y="138" class="box-text" style="fill: #0e7490;">座標 → クリック/入力</text>
+    <text x="145" y="153" class="label" style="fill: #0891b2;">MOUSE &amp; KEYBOARD</text>
+
+    <!-- Capabilities -->
+    <g transform="translate(20, 185)">
+      <rect x="0" y="0" width="250" height="70" fill="#d1fae5" stroke="#6ee7b7" stroke-width="1" rx="4"/>
+      <text x="125" y="18" class="annotation" style="fill: #047857; font-weight: 600;">メリット</text>
+      <text x="125" y="35" class="annotation" style="fill: #047857;">✓ 任意の可視UI対応</text>
+      <text x="125" y="50" class="annotation" style="fill: #047857;">✓ UI変更に自動適応</text>
+      <text x="125" y="65" class="annotation" style="fill: #047857;">✓ API統合不要</text>
+    </g>
+  </g>
+</svg>

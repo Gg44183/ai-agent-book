@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 580 380">
+  <defs>
+    <style>
+      .label { font: 500 9px 'SF Mono', 'Menlo', 'Monaco', monospace; fill: #666; text-anchor: middle; }
+      .box-text { font: 600 10px 'SF Mono', 'Menlo', 'Monaco', monospace; fill: #1a1a1a; text-anchor: middle; }
+      .box-text-sm { font: 500 8px 'SF Mono', 'Menlo', 'Monaco', monospace; fill: #666; text-anchor: middle; }
+      .title { font: 600 12px 'SF Mono', 'Menlo', 'Monaco', monospace; fill: #1a1a1a; text-anchor: middle; }
+      .decision { font: 500 9px 'SF Mono', 'Menlo', 'Monaco', monospace; fill: #1a1a1a; text-anchor: middle; }
+    </style>
+    <marker id="arrow-wf" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#666"/>
+    </marker>
+  </defs>
+  <rect width="580" height="380" fill="#fff"/>
+
+  <!-- Title -->
+  <text x="290" y="22" class="title">TOKEN BUDGET WORKFLOW</text>
+  <text x="290" y="38" class="label">デュアルパス記録メカニズム</text>
+
+  <!-- Workflow Execution box -->
+  <rect x="190" y="50" width="200" height="35" fill="#dbeafe" stroke="#1a1a1a" stroke-width="1.5" rx="2"/>
+  <text x="290" y="72" class="box-text">Workflow Execution</text>
+
+  <!-- Arrow down -->
+  <line x1="290" y1="85" x2="290" y2="105" stroke="#666" stroke-width="1.5" marker-end="url(#arrow-wf)"/>
+
+  <!-- Decision diamond -->
+  <polygon points="290,110 350,140 290,170 230,140" fill="#fef3c7" stroke="#1a1a1a" stroke-width="1.5"/>
+  <text x="290" y="137" class="decision">Budget</text>
+  <text x="290" y="149" class="decision">Enabled?</text>
+
+  <!-- YES branch (left) -->
+  <line x1="230" y1="140" x2="160" y2="140" stroke="#666" stroke-width="1.5"/>
+  <line x1="160" y1="140" x2="160" y2="190" stroke="#666" stroke-width="1.5" marker-end="url(#arrow-wf)"/>
+  <text x="195" y="133" class="label">YES</text>
+
+  <!-- NO branch (right) -->
+  <line x1="350" y1="140" x2="420" y2="140" stroke="#666" stroke-width="1.5"/>
+  <line x1="420" y1="140" x2="420" y2="190" stroke="#666" stroke-width="1.5" marker-end="url(#arrow-wf)"/>
+  <text x="385" y="133" class="label">NO</text>
+
+  <!-- YES path: ExecuteAgentWithBudget -->
+  <rect x="70" y="195" width="180" height="45" fill="#d1fae5" stroke="#1a1a1a" stroke-width="1.5" rx="2"/>
+  <text x="160" y="215" class="box-text">ExecuteAgentWithBudget</text>
+  <text x="160" y="230" class="box-text-sm">(activity)</text>
+
+  <!-- NO path: ExecuteAgent -->
+  <rect x="330" y="195" width="180" height="45" fill="#cffafe" stroke="#1a1a1a" stroke-width="1.5" rx="2"/>
+  <text x="420" y="215" class="box-text">ExecuteAgent</text>
+  <text x="420" y="230" class="box-text-sm">(activity)</text>
+
+  <!-- Arrow down from YES -->
+  <line x1="160" y1="240" x2="160" y2="270" stroke="#666" stroke-width="1.5" marker-end="url(#arrow-wf)"/>
+
+  <!-- Arrow down from NO -->
+  <line x1="420" y1="240" x2="420" y2="270" stroke="#666" stroke-width="1.5" marker-end="url(#arrow-wf)"/>
+
+  <!-- YES result: Records in activity -->
+  <rect x="70" y="275" width="180" height="40" fill="#d1fae5" stroke="#1a1a1a" stroke-width="1" rx="2"/>
+  <text x="160" y="293" class="box-text-sm">Records token usage</text>
+  <text x="160" y="306" class="box-text-sm">in activity</text>
+
+  <!-- NO result: Pattern records -->
+  <rect x="330" y="275" width="180" height="40" fill="#cffafe" stroke="#1a1a1a" stroke-width="1" rx="2"/>
+  <text x="420" y="293" class="box-text-sm">Pattern records tokens</text>
+  <text x="420" y="306" class="box-text-sm">(parallel/react/etc.)</text>
+
+  <!-- Legend -->
+  <rect x="180" y="335" width="220" height="35" fill="#f8fafc" stroke="#e5e7eb" stroke-width="1" rx="2"/>
+  <text x="290" y="352" class="label">重複記録を回避：Budget モードは Activity 層で記録</text>
+  <text x="290" y="364" class="label">Non-Budget モードは Pattern 層で記録</text>
+</svg>
