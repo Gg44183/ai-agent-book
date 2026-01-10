@@ -253,6 +253,8 @@ Planning 不是一次性的。执行完子任务后，你需要问：**够不够
     └──────── 生成补充查询 ◄────────┘
 ```
 
+![Planning执行流程](assets/planning-execution-flow.svg)
+
 ### 评估结构
 
 ```go

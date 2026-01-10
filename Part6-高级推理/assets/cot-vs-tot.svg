@@ -1,0 +1,105 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 340">
+  <defs>
+    <style>
+      .label { font: 500 10px 'SF Mono', 'Menlo', 'Monaco', monospace; fill: #666; text-anchor: middle; letter-spacing: 0.5px; }
+      .box-text { font: 600 12px 'SF Mono', 'Menlo', 'Monaco', monospace; fill: #1a1a1a; text-anchor: middle; }
+      .box-text-sm { font: 500 10px 'SF Mono', 'PingFang SC', monospace; fill: #444; }
+      .title { font: 700 16px 'SF Mono', 'PingFang SC', sans-serif; fill: #1a1a1a; text-anchor: middle; }
+      .section-title { font: 600 12px 'SF Mono', monospace; fill: #1a1a1a; text-anchor: middle; }
+      .score { font: 600 10px 'SF Mono', monospace; fill: #fff; text-anchor: middle; }
+      .score-text { font: 500 10px 'SF Mono', monospace; fill: #666; }
+      .pruned { opacity: 0.4; }
+    </style>
+    <marker id="arrow" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#666"/>
+    </marker>
+    <marker id="arrow-red" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#ef4444"/>
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="680" height="340" fill="#fff"/>
+
+  <!-- Title -->
+  <text x="340" y="28" class="title">CoT vs ToT 对比</text>
+  <text x="340" y="45" class="label">CHAIN-OF-THOUGHT VS TREE-OF-THOUGHTS</text>
+
+  <!-- Divider -->
+  <line x1="340" y1="60" x2="340" y2="320" stroke="#e5e7eb" stroke-width="1" stroke-dasharray="5,3"/>
+
+  <!-- LEFT: Chain-of-Thought -->
+  <text x="170" y="75" class="section-title">Chain-of-Thought (线性)</text>
+
+  <!-- CoT Steps -->
+  <rect x="50" y="95" width="80" height="35" fill="#67e8f9" stroke="#1a1a1a" stroke-width="1.5" rx="2"/>
+  <text x="90" y="117" class="box-text">Step 1</text>
+
+  <line x1="130" y1="112" x2="155" y2="112" stroke="#666" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <rect x="160" y="95" width="80" height="35" fill="#67e8f9" stroke="#1a1a1a" stroke-width="1.5" rx="2"/>
+  <text x="200" y="117" class="box-text">Step 2</text>
+
+  <line x1="240" y1="112" x2="265" y2="112" stroke="#666" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <rect x="270" y="95" width="80" height="35" fill="#fde047" stroke="#1a1a1a" stroke-width="1.5" rx="2"/>
+  <text x="310" y="112" class="box-text">Step 3</text>
+  <text x="310" y="125" style="font: 400 8px 'SF Mono'; fill: #888;">卡住了...</text>
+
+  <!-- CoT problem arrow -->
+  <path d="M 200 130 L 200 155" fill="none" stroke="#ef4444" stroke-width="1.5" marker-end="url(#arrow-red)"/>
+  <text x="200" y="175" style="font: 500 10px 'SF Mono', 'PingFang SC'; fill: #ef4444; text-anchor: middle;">没法回头</text>
+
+  <!-- CoT characteristics -->
+  <rect x="50" y="200" width="280" height="110" fill="#fef3c7" stroke="#f59e0b" stroke-width="1" rx="3"/>
+  <text x="70" y="225" class="box-text-sm">• 单路径执行</text>
+  <text x="70" y="245" class="box-text-sm">• 走错难回头</text>
+  <text x="70" y="265" class="box-text-sm">• 成本低</text>
+  <text x="70" y="285" class="box-text-sm">• 收敛快</text>
+
+  <!-- RIGHT: Tree-of-Thoughts -->
+  <text x="510" y="75" class="section-title">Tree-of-Thoughts (树形)</text>
+
+  <!-- ToT Root -->
+  <rect x="355" y="95" width="60" height="30" fill="#67e8f9" stroke="#1a1a1a" stroke-width="1.5" rx="2"/>
+  <text x="385" y="115" class="box-text">起点</text>
+
+  <line x1="415" y1="110" x2="440" y2="110" stroke="#666" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <rect x="445" y="95" width="60" height="30" fill="#67e8f9" stroke="#1a1a1a" stroke-width="1.5" rx="2"/>
+  <text x="475" y="115" class="box-text">选择</text>
+
+  <!-- Branch lines -->
+  <line x1="505" y1="100" x2="540" y2="90" stroke="#666" stroke-width="1.5"/>
+  <line x1="505" y1="110" x2="540" y2="110" stroke="#666" stroke-width="1.5"/>
+  <line x1="505" y1="120" x2="540" y2="130" stroke="#666" stroke-width="1.5"/>
+
+  <!-- Branch 1: High score (continue) -->
+  <rect x="545" y="75" width="90" height="28" fill="#10b981" stroke="#1a1a1a" stroke-width="1.5" rx="2"/>
+  <text x="590" y="93" style="font: 500 9px 'SF Mono', 'PingFang SC'; fill: #fff; text-anchor: middle;">缓存优先方案</text>
+  <circle cx="650" cy="89" r="12" fill="#10b981" stroke="#1a1a1a" stroke-width="1"/>
+  <text x="650" y="93" class="score">0.85</text>
+
+  <!-- Branch 2: Low score (pruned) -->
+  <g class="pruned">
+    <rect x="545" y="108" width="90" height="28" fill="#ef4444" stroke="#1a1a1a" stroke-width="1.5" rx="2"/>
+    <text x="590" y="126" style="font: 500 9px 'SF Mono', 'PingFang SC'; fill: #fff; text-anchor: middle;">微服务拆分</text>
+    <circle cx="650" cy="122" r="12" fill="#ef4444" stroke="#1a1a1a" stroke-width="1"/>
+    <text x="650" y="126" class="score">0.45</text>
+    <line x1="545" y1="108" x2="635" y2="136" stroke="#ef4444" stroke-width="2"/>
+  </g>
+  <text x="590" y="150" style="font: 400 8px 'SF Mono'; fill: #ef4444; text-anchor: middle;">剪掉</text>
+
+  <!-- Branch 3: Medium score (keep) -->
+  <rect x="545" y="160" width="90" height="28" fill="#fde047" stroke="#1a1a1a" stroke-width="1.5" rx="2"/>
+  <text x="590" y="178" style="font: 500 9px 'SF Mono', 'PingFang SC'; fill: #1a1a1a; text-anchor: middle;">边缘计算方案</text>
+  <circle cx="650" cy="174" r="12" fill="#fde047" stroke="#1a1a1a" stroke-width="1"/>
+  <text x="650" y="178" style="font: 600 10px 'SF Mono'; fill: #1a1a1a; text-anchor: middle;">0.72</text>
+
+  <!-- ToT characteristics -->
+  <rect x="355" y="200" width="280" height="110" fill="#d1fae5" stroke="#10b981" stroke-width="1" rx="3"/>
+  <text x="375" y="225" class="box-text-sm">• 多路径并行探索</text>
+  <text x="375" y="245" class="box-text-sm">• 可剪枝、可回溯</text>
+  <text x="375" y="265" class="box-text-sm">• 成本高 (3-5x)</text>
+  <text x="375" y="285" class="box-text-sm">• 适合试错场景</text>
+</svg>

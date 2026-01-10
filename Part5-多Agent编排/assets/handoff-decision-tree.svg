@@ -1,0 +1,93 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 380">
+  <defs>
+    <style>
+      .label { font: 500 10px 'SF Mono', 'Menlo', 'Monaco', monospace; fill: #666; text-anchor: middle; letter-spacing: 0.5px; }
+      .question { font: 500 11px 'SF Mono', 'PingFang SC', monospace; fill: #1a1a1a; text-anchor: middle; }
+      .answer { font: 600 10px 'SF Mono', monospace; fill: #1a1a1a; text-anchor: middle; }
+      .solution { font: 600 10px 'SF Mono', 'PingFang SC', monospace; fill: #fff; text-anchor: middle; }
+      .title { font: 700 16px 'SF Mono', 'PingFang SC', sans-serif; fill: #1a1a1a; text-anchor: middle; }
+      .yes { font: 600 9px 'SF Mono', monospace; fill: #10b981; }
+      .no { font: 600 9px 'SF Mono', monospace; fill: #ef4444; }
+    </style>
+    <marker id="arrow" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#666"/>
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="600" height="380" fill="#fff"/>
+
+  <!-- Title -->
+  <text x="300" y="28" class="title">数据传递方式决策树</text>
+  <text x="300" y="45" class="label">DATA HANDOFF DECISION TREE</text>
+
+  <!-- Question 1 -->
+  <rect x="180" y="65" width="240" height="40" fill="#67e8f9" stroke="#1a1a1a" stroke-width="1.5" rx="3"/>
+  <text x="300" y="90" class="question">数据流是线性的吗？</text>
+
+  <!-- Yes branch from Q1 -->
+  <line x1="300" y1="105" x2="300" y2="115" stroke="#666" stroke-width="1.5"/>
+  <line x1="300" y1="115" x2="120" y2="115" stroke="#666" stroke-width="1.5"/>
+  <line x1="120" y1="115" x2="120" y2="135" stroke="#666" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <text x="200" y="112" class="yes">是</text>
+
+  <!-- Solution 1: previous_results -->
+  <rect x="40" y="140" width="160" height="40" fill="#10b981" stroke="#1a1a1a" stroke-width="1.5" rx="20"/>
+  <text x="120" y="157" class="solution">previous_results</text>
+  <text x="120" y="172" class="solution" style="font-size: 9px;">(最简单)</text>
+
+  <!-- No branch from Q1 -->
+  <line x1="300" y1="115" x2="440" y2="115" stroke="#666" stroke-width="1.5"/>
+  <line x1="440" y1="115" x2="440" y2="135" stroke="#666" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <text x="380" y="112" class="no">否</text>
+
+  <!-- Question 2 -->
+  <rect x="320" y="140" width="240" height="40" fill="#67e8f9" stroke="#1a1a1a" stroke-width="1.5" rx="3"/>
+  <text x="440" y="157" class="question">多个 Agent 消费</text>
+  <text x="440" y="172" class="question">同一数据吗？</text>
+
+  <!-- Yes branch from Q2 -->
+  <line x1="440" y1="180" x2="440" y2="190" stroke="#666" stroke-width="1.5"/>
+  <line x1="440" y1="190" x2="320" y2="190" stroke="#666" stroke-width="1.5"/>
+  <line x1="320" y1="190" x2="320" y2="210" stroke="#666" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <text x="370" y="187" class="yes">是</text>
+
+  <!-- Solution 2: Workspace -->
+  <rect x="240" y="215" width="160" height="40" fill="#3b82f6" stroke="#1a1a1a" stroke-width="1.5" rx="20"/>
+  <text x="320" y="232" class="solution">Workspace</text>
+  <text x="320" y="247" class="solution" style="font-size: 9px;">(发布-订阅)</text>
+
+  <!-- No branch from Q2 -->
+  <line x1="440" y1="190" x2="520" y2="190" stroke="#666" stroke-width="1.5"/>
+  <line x1="520" y1="190" x2="520" y2="210" stroke="#666" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <text x="485" y="187" class="no">否</text>
+
+  <!-- Question 3 -->
+  <rect x="420" y="215" width="160" height="40" fill="#67e8f9" stroke="#1a1a1a" stroke-width="1.5" rx="3"/>
+  <text x="500" y="232" class="question">需要 Agent 间</text>
+  <text x="500" y="247" class="question">协商吗？</text>
+
+  <!-- Yes branch from Q3 -->
+  <line x1="500" y1="255" x2="500" y2="265" stroke="#666" stroke-width="1.5"/>
+  <line x1="500" y1="265" x2="420" y2="265" stroke="#666" stroke-width="1.5"/>
+  <line x1="420" y1="265" x2="420" y2="285" stroke="#666" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <text x="455" y="262" class="yes">是</text>
+
+  <!-- Solution 3: P2P Message -->
+  <rect x="340" y="290" width="160" height="40" fill="#f59e0b" stroke="#1a1a1a" stroke-width="1.5" rx="20"/>
+  <text x="420" y="307" class="solution">P2P 消息</text>
+  <text x="420" y="322" class="solution" style="font-size: 9px;">(点对点)</text>
+
+  <!-- No branch from Q3 -->
+  <line x1="500" y1="265" x2="560" y2="265" stroke="#666" stroke-width="1.5"/>
+  <line x1="560" y1="265" x2="560" y2="285" stroke="#666" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <text x="535" y="262" class="no">否</text>
+
+  <!-- Solution 4: Workspace again -->
+  <rect x="480" y="290" width="160" height="40" fill="#3b82f6" stroke="#1a1a1a" stroke-width="1.5" rx="20"/>
+  <text x="560" y="312" class="solution">Workspace</text>
+
+  <!-- Legend -->
+  <rect x="40" y="340" width="520" height="30" fill="#f8fafc" stroke="#e5e7eb" stroke-width="1" rx="3"/>
+  <text x="55" y="360" class="label" style="text-anchor: start;">大部分场景用 previous_results 或 Workspace 就够了</text>
+</svg>

@@ -1,0 +1,110 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 400">
+  <defs>
+    <style>
+      .label { font: 500 10px 'SF Mono', 'Menlo', 'Monaco', monospace; fill: #666; text-anchor: middle; letter-spacing: 0.5px; }
+      .box-text { font: 600 11px 'SF Mono', 'Menlo', 'Monaco', monospace; fill: #1a1a1a; text-anchor: middle; }
+      .title { font: 700 14px 'SF Mono', 'Menlo', 'Monaco', monospace; fill: #1a1a1a; text-anchor: middle; letter-spacing: 1px; }
+      .column-title { font: 600 11px 'SF Mono', 'Menlo', 'Monaco', monospace; fill: #1a1a1a; text-anchor: middle; }
+      .annotation { font: 400 9px 'SF Mono', 'Menlo', 'Monaco', monospace; fill: #666; }
+      .time-label { font: 400 9px 'SF Mono', 'Menlo', 'Monaco', monospace; fill: #9ca3af; font-style: italic; }
+    </style>
+    <marker id="arrow-blue" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#3b82f6"/>
+    </marker>
+    <marker id="arrow-green" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#10b981"/>
+    </marker>
+    <marker id="arrow-gray" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#9ca3af"/>
+    </marker>
+    <!-- Patterns -->
+    <pattern id="offline-pattern" width="8" height="8" patternUnits="userSpaceOnUse">
+      <line x1="0" y1="8" x2="8" y2="0" stroke="#9ca3af" stroke-width="0.5" opacity="0.4"/>
+    </pattern>
+  </defs>
+
+  <!-- Background -->
+  <rect width="720" height="400" fill="#fff"/>
+
+  <!-- Title -->
+  <text x="360" y="28" class="title">BACKGROUND AGENT ASYNC FLOW</text>
+  <text x="360" y="45" class="label">用户会话与任务执行解耦</text>
+
+  <!-- Three columns -->
+  <!-- Column headers -->
+  <text x="140" y="75" class="column-title">用户会话</text>
+  <text x="360" y="75" class="column-title">后台系统</text>
+  <text x="580" y="75" class="column-title">任务执行</text>
+
+  <!-- Vertical lines -->
+  <line x1="140" y1="90" x2="140" y2="370" stroke="#3b82f6" stroke-width="2"/>
+  <line x1="360" y1="90" x2="360" y2="370" stroke="#6366f1" stroke-width="2"/>
+  <line x1="580" y1="90" x2="580" y2="370" stroke="#10b981" stroke-width="2"/>
+
+  <!-- Step 1: Create schedule -->
+  <g transform="translate(0, 100)">
+    <rect x="70" y="0" width="140" height="30" fill="#dbeafe" stroke="#3b82f6" stroke-width="1" rx="3"/>
+    <text x="140" y="20" class="box-text" style="font-size: 10px;">创建调度任务</text>
+
+    <line x1="210" y1="15" x2="290" y2="15" stroke="#3b82f6" stroke-width="1.5" marker-end="url(#arrow-blue)"/>
+
+    <rect x="295" y="0" width="130" height="30" fill="#ede9fe" stroke="#6366f1" stroke-width="1" rx="3"/>
+    <text x="360" y="20" class="box-text" style="font-size: 10px;">存储 + Temporal</text>
+  </g>
+
+  <!-- Step 2: Return immediately -->
+  <g transform="translate(0, 145)">
+    <line x1="290" y1="10" x2="210" y2="10" stroke="#10b981" stroke-width="1.5" marker-end="url(#arrow-green)"/>
+    <text x="250" y="5" class="annotation" style="fill: #10b981;">返回任务ID (立即)</text>
+  </g>
+
+  <!-- User offline indicator -->
+  <g transform="translate(0, 170)">
+    <rect x="90" y="0" width="100" height="80" fill="url(#offline-pattern)" stroke="#9ca3af" stroke-width="1" stroke-dasharray="4,2" rx="3"/>
+    <text x="140" y="45" class="annotation" style="fill: #9ca3af;">用户离线</text>
+
+    <text x="360" y="30" class="time-label">～～～ 到达调度时间 ～～～</text>
+  </g>
+
+  <!-- Step 3: Trigger execution -->
+  <g transform="translate(0, 260)">
+    <rect x="295" y="0" width="130" height="30" fill="#ede9fe" stroke="#6366f1" stroke-width="1" rx="3"/>
+    <text x="360" y="20" class="box-text" style="font-size: 10px;">触发执行</text>
+
+    <line x1="425" y1="15" x2="505" y2="15" stroke="#6366f1" stroke-width="1.5" marker-end="url(#arrow-blue)"/>
+
+    <rect x="510" y="0" width="140" height="30" fill="#d1fae5" stroke="#10b981" stroke-width="1" rx="3"/>
+    <text x="580" y="20" class="box-text" style="font-size: 10px;">执行任务...</text>
+  </g>
+
+  <!-- Step 4: Record status -->
+  <g transform="translate(0, 300)">
+    <line x1="505" y1="10" x2="425" y2="10" stroke="#9ca3af" stroke-width="1" stroke-dasharray="3,2" marker-end="url(#arrow-gray)"/>
+    <text x="465" y="5" class="annotation">记录状态</text>
+
+    <rect x="510" y="15" width="140" height="25" fill="#bbf7d0" stroke="#10b981" stroke-width="1" rx="3"/>
+    <text x="580" y="32" class="annotation" style="fill: #047857;">执行完成 ✓</text>
+  </g>
+
+  <!-- User back online -->
+  <g transform="translate(0, 345)">
+    <text x="140" y="0" class="time-label">～～～ 用户上线 ～～～</text>
+
+    <rect x="70" y="10" width="140" height="30" fill="#dbeafe" stroke="#3b82f6" stroke-width="1" rx="3"/>
+    <text x="140" y="30" class="box-text" style="font-size: 10px;">查询结果</text>
+
+    <line x1="210" y1="25" x2="290" y2="25" stroke="#3b82f6" stroke-width="1.5" marker-end="url(#arrow-blue)"/>
+
+    <rect x="295" y="10" width="130" height="30" fill="#ede9fe" stroke="#6366f1" stroke-width="1" rx="3"/>
+    <text x="360" y="30" class="box-text" style="font-size: 10px;">返回历史记录</text>
+  </g>
+
+  <!-- Key features box -->
+  <rect x="620" y="90" width="90" height="120" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1" rx="4"/>
+  <text x="665" y="108" class="annotation" style="font-weight: 600;">核心特征</text>
+  <text x="665" y="128" class="annotation">✓ 解耦</text>
+  <text x="665" y="143" class="annotation">✓ 持久化</text>
+  <text x="665" y="158" class="annotation">✓ 调度</text>
+  <text x="665" y="173" class="annotation">✓ 可观测</text>
+  <text x="665" y="188" class="annotation">✓ 容错</text>
+</svg>

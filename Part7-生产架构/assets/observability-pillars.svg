@@ -1,0 +1,119 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 380">
+  <defs>
+    <style>
+      .label { font: 500 10px 'SF Mono', 'Menlo', 'Monaco', monospace; fill: #666; text-anchor: middle; letter-spacing: 0.5px; }
+      .box-text { font: 600 13px 'SF Mono', 'Menlo', 'Monaco', monospace; fill: #1a1a1a; text-anchor: middle; }
+      .title { font: 600 12px 'SF Mono', 'Menlo', 'Monaco', monospace; fill: #1a1a1a; letter-spacing: 1px; }
+      .pillar-title { font: 700 14px 'SF Mono', 'Menlo', 'Monaco', monospace; fill: #1a1a1a; text-anchor: middle; }
+      .tool-label { font: 500 10px 'SF Mono', 'Menlo', 'Monaco', monospace; fill: #666; text-anchor: middle; }
+      .question { font: 500 11px 'SF Mono', 'Menlo', 'Monaco', monospace; fill: #1a1a1a; text-anchor: middle; }
+      .desc { font: 400 9px 'SF Mono', 'Menlo', 'Monaco', monospace; fill: #666; text-anchor: middle; }
+    </style>
+    <!-- Grid pattern for technical feel -->
+    <pattern id="grid-obs" width="10" height="10" patternUnits="userSpaceOnUse">
+      <path d="M 10 0 L 0 0 0 10" fill="none" stroke="#e5e7eb" stroke-width="0.3"/>
+    </pattern>
+    <!-- Pillar patterns -->
+    <pattern id="metrics-pattern" width="6" height="6" patternUnits="userSpaceOnUse">
+      <circle cx="3" cy="3" r="1" fill="#2563eb" opacity="0.2"/>
+    </pattern>
+    <pattern id="traces-pattern" width="6" height="6" patternUnits="userSpaceOnUse">
+      <line x1="0" y1="6" x2="6" y2="0" stroke="#0891b2" stroke-width="0.6" opacity="0.3"/>
+    </pattern>
+    <pattern id="logs-pattern" width="5" height="5" patternUnits="userSpaceOnUse">
+      <line x1="0" y1="2.5" x2="5" y2="2.5" stroke="#059669" stroke-width="0.5" opacity="0.3"/>
+    </pattern>
+  </defs>
+
+  <!-- White background with subtle grid -->
+  <rect width="680" height="380" fill="#fff"/>
+  <rect x="40" y="60" width="600" height="280" fill="url(#grid-obs)"/>
+
+  <!-- Title -->
+  <text x="340" y="28" class="title" text-anchor="middle">OBSERVABILITY THREE PILLARS</text>
+  <text x="340" y="44" class="label">可观测性三支柱</text>
+
+  <!-- Container frame -->
+  <rect x="40" y="60" width="600" height="280" fill="none" stroke="#d1d5db" stroke-width="1.5"/>
+
+  <!-- Header row -->
+  <rect x="40" y="60" width="600" height="40" fill="#f3f4f6" stroke="#d1d5db" stroke-width="1"/>
+  <text x="140" y="85" class="pillar-title">Metrics</text>
+  <text x="340" y="85" class="pillar-title">Traces</text>
+  <text x="540" y="85" class="pillar-title">Logs</text>
+
+  <!-- Divider lines -->
+  <line x1="240" y1="60" x2="240" y2="340" stroke="#d1d5db" stroke-width="1"/>
+  <line x1="440" y1="60" x2="440" y2="340" stroke="#d1d5db" stroke-width="1"/>
+
+  <!-- Tool row -->
+  <rect x="40" y="100" width="200" height="35" fill="#dbeafe"/>
+  <rect x="40" y="100" width="200" height="35" fill="url(#metrics-pattern)"/>
+  <text x="140" y="122" class="tool-label">(Prometheus)</text>
+
+  <rect x="240" y="100" width="200" height="35" fill="#cffafe"/>
+  <rect x="240" y="100" width="200" height="35" fill="url(#traces-pattern)"/>
+  <text x="340" y="122" class="tool-label">(OTLP / Jaeger)</text>
+
+  <rect x="440" y="100" width="200" height="35" fill="#d1fae5"/>
+  <rect x="440" y="100" width="200" height="35" fill="url(#logs-pattern)"/>
+  <text x="540" y="122" class="tool-label">(Zap / JSON)</text>
+
+  <!-- Question row -->
+  <rect x="40" y="135" width="200" height="50" fill="#eff6ff" stroke-width="0"/>
+  <text x="140" y="158" class="question">"多少？多快？"</text>
+  <text x="140" y="174" class="desc">How many? How fast?</text>
+
+  <rect x="240" y="135" width="200" height="50" fill="#ecfeff" stroke-width="0"/>
+  <text x="340" y="158" class="question">"经过哪里？"</text>
+  <text x="340" y="174" class="desc">Where did it go?</text>
+
+  <rect x="440" y="135" width="200" height="50" fill="#ecfdf5" stroke-width="0"/>
+  <text x="540" y="158" class="question">"发生了什么？"</text>
+  <text x="540" y="174" class="desc">What happened?</text>
+
+  <!-- Data type row -->
+  <rect x="40" y="185" width="200" height="45" fill="#fff"/>
+  <text x="140" y="205" class="label">计数器、直方图</text>
+  <text x="140" y="220" class="desc">Counters, Histograms</text>
+
+  <rect x="240" y="185" width="200" height="45" fill="#fff"/>
+  <text x="340" y="205" class="label">分布式调用链</text>
+  <text x="340" y="220" class="desc">Distributed Call Chains</text>
+
+  <rect x="440" y="185" width="200" height="45" fill="#fff"/>
+  <text x="540" y="205" class="label">结构化事件</text>
+  <text x="540" y="220" class="desc">Structured Events</text>
+
+  <!-- Use case row -->
+  <rect x="40" y="230" width="200" height="50" fill="#dbeafe" stroke-width="0"/>
+  <rect x="40" y="230" width="200" height="50" fill="url(#metrics-pattern)"/>
+  <text x="140" y="252" class="label">告警、仪表盘</text>
+  <text x="140" y="268" class="desc">Alerting, Dashboards</text>
+
+  <rect x="240" y="230" width="200" height="50" fill="#cffafe" stroke-width="0"/>
+  <rect x="240" y="230" width="200" height="50" fill="url(#traces-pattern)"/>
+  <text x="340" y="252" class="label">性能瓶颈定位</text>
+  <text x="340" y="268" class="desc">Performance Bottlenecks</text>
+
+  <rect x="440" y="230" width="200" height="50" fill="#d1fae5" stroke-width="0"/>
+  <rect x="440" y="230" width="200" height="50" fill="url(#logs-pattern)"/>
+  <text x="540" y="252" class="label">调试、审计</text>
+  <text x="540" y="268" class="desc">Debugging, Auditing</text>
+
+  <!-- Example questions -->
+  <rect x="40" y="280" width="200" height="60" fill="#fff"/>
+  <text x="140" y="305" class="desc" style="fill: #2563eb;">"失败率是多少？"</text>
+  <text x="140" y="322" class="desc">"What's the failure rate?"</text>
+
+  <rect x="240" y="280" width="200" height="60" fill="#fff"/>
+  <text x="340" y="305" class="desc" style="fill: #0891b2;">"请求卡在哪里？"</text>
+  <text x="340" y="322" class="desc">"Where is it stuck?"</text>
+
+  <rect x="440" y="280" width="200" height="60" fill="#fff"/>
+  <text x="540" y="305" class="desc" style="fill: #059669;">"报错时参数是什么？"</text>
+  <text x="540" y="322" class="desc">"What were the params?"</text>
+
+  <!-- Footer note -->
+  <text x="340" y="365" class="label">三者各有侧重，互为补充 / Complementary strengths</text>
+</svg>

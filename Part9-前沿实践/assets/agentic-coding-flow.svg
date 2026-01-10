@@ -1,0 +1,142 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 420">
+  <defs>
+    <style>
+      .label { font: 500 10px 'SF Mono', 'Menlo', 'Monaco', monospace; fill: #666; text-anchor: middle; letter-spacing: 0.5px; }
+      .box-text { font: 600 11px 'SF Mono', 'Menlo', 'Monaco', monospace; fill: #1a1a1a; text-anchor: middle; }
+      .title { font: 700 14px 'SF Mono', 'Menlo', 'Monaco', monospace; fill: #1a1a1a; text-anchor: middle; letter-spacing: 1px; }
+      .step-num { font: 700 14px 'SF Mono', 'Menlo', 'Monaco', monospace; fill: #fff; text-anchor: middle; }
+      .annotation { font: 400 9px 'SF Mono', 'Menlo', 'Monaco', monospace; fill: #666; }
+    </style>
+    <marker id="arrow-flow" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#6366f1"/>
+    </marker>
+    <!-- Step colors -->
+    <linearGradient id="step1-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#dbeafe"/>
+      <stop offset="100%" style="stop-color:#93c5fd"/>
+    </linearGradient>
+    <linearGradient id="step2-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#a5f3fc"/>
+      <stop offset="100%" style="stop-color:#67e8f9"/>
+    </linearGradient>
+    <linearGradient id="step3-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#fce7f3"/>
+      <stop offset="100%" style="stop-color:#f9a8d4"/>
+    </linearGradient>
+    <linearGradient id="step4-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#fef3c7"/>
+      <stop offset="100%" style="stop-color:#fde047"/>
+    </linearGradient>
+    <linearGradient id="step5-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#d1fae5"/>
+      <stop offset="100%" style="stop-color:#6ee7b7"/>
+    </linearGradient>
+    <linearGradient id="step6-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#e9d5ff"/>
+      <stop offset="100%" style="stop-color:#c4b5fd"/>
+    </linearGradient>
+    <linearGradient id="step7-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#bbf7d0"/>
+      <stop offset="100%" style="stop-color:#4ade80"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="700" height="420" fill="#fff"/>
+
+  <!-- Title -->
+  <text x="350" y="28" class="title">AGENTIC CODING FLOW</text>
+  <text x="350" y="45" class="label">自主编程完整流程</text>
+
+  <!-- User Input -->
+  <rect x="220" y="60" width="260" height="35" fill="#f3f4f6" stroke="#9ca3af" stroke-width="1.5" rx="4"/>
+  <text x="350" y="82" class="box-text" style="fill: #4b5563;">"给用户服务添加邮件验证功能"</text>
+
+  <!-- Arrow down -->
+  <line x1="350" y1="95" x2="350" y2="115" stroke="#6366f1" stroke-width="2" marker-end="url(#arrow-flow)"/>
+
+  <!-- Main Process Box -->
+  <rect x="80" y="120" width="540" height="270" fill="#f8fafc" stroke="#e2e8f0" stroke-width="2" rx="8"/>
+
+  <!-- Step 1: Understand -->
+  <g transform="translate(110, 140)">
+    <rect x="0" y="0" width="130" height="65" fill="url(#step1-grad)" stroke="#3b82f6" stroke-width="1.5" rx="6"/>
+    <circle cx="20" cy="15" r="12" fill="#3b82f6"/>
+    <text x="20" y="19" class="step-num">1</text>
+    <text x="75" y="30" class="box-text">理解需求</text>
+    <text x="65" y="50" class="annotation">解析任务目标</text>
+  </g>
+
+  <!-- Step 2: Analyze -->
+  <g transform="translate(285, 140)">
+    <rect x="0" y="0" width="130" height="65" fill="url(#step2-grad)" stroke="#0891b2" stroke-width="1.5" rx="6"/>
+    <circle cx="20" cy="15" r="12" fill="#0891b2"/>
+    <text x="20" y="19" class="step-num">2</text>
+    <text x="75" y="30" class="box-text">分析代码库</text>
+    <text x="65" y="50" class="annotation">找相关文件和函数</text>
+  </g>
+
+  <!-- Step 3: Plan -->
+  <g transform="translate(460, 140)">
+    <rect x="0" y="0" width="130" height="65" fill="url(#step3-grad)" stroke="#db2777" stroke-width="1.5" rx="6"/>
+    <circle cx="20" cy="15" r="12" fill="#db2777"/>
+    <text x="20" y="19" class="step-num">3</text>
+    <text x="75" y="30" class="box-text">规划实现</text>
+    <text x="65" y="50" class="annotation">设计修改方案</text>
+  </g>
+
+  <!-- Arrows between row 1 -->
+  <line x1="240" y1="172" x2="280" y2="172" stroke="#6366f1" stroke-width="1.5" marker-end="url(#arrow-flow)"/>
+  <line x1="415" y1="172" x2="455" y2="172" stroke="#6366f1" stroke-width="1.5" marker-end="url(#arrow-flow)"/>
+
+  <!-- Arrow down to row 2 -->
+  <path d="M 525 205 L 525 225 L 175 225 L 175 240" fill="none" stroke="#6366f1" stroke-width="1.5" marker-end="url(#arrow-flow)"/>
+
+  <!-- Step 4: Write -->
+  <g transform="translate(110, 245)">
+    <rect x="0" y="0" width="130" height="65" fill="url(#step4-grad)" stroke="#ca8a04" stroke-width="1.5" rx="6"/>
+    <circle cx="20" cy="15" r="12" fill="#ca8a04"/>
+    <text x="20" y="19" class="step-num">4</text>
+    <text x="75" y="30" class="box-text">编写代码</text>
+    <text x="65" y="50" class="annotation">生成/修改代码</text>
+  </g>
+
+  <!-- Step 5: Test -->
+  <g transform="translate(285, 245)">
+    <rect x="0" y="0" width="130" height="65" fill="url(#step5-grad)" stroke="#059669" stroke-width="1.5" rx="6"/>
+    <circle cx="20" cy="15" r="12" fill="#059669"/>
+    <text x="20" y="19" class="step-num">5</text>
+    <text x="75" y="30" class="box-text">运行测试</text>
+    <text x="65" y="50" class="annotation">在沙箱中验证</text>
+  </g>
+
+  <!-- Step 6: Iterate -->
+  <g transform="translate(460, 245)">
+    <rect x="0" y="0" width="130" height="65" fill="url(#step6-grad)" stroke="#7c3aed" stroke-width="1.5" rx="6"/>
+    <circle cx="20" cy="15" r="12" fill="#7c3aed"/>
+    <text x="20" y="19" class="step-num">6</text>
+    <text x="75" y="30" class="box-text">迭代修复</text>
+    <text x="65" y="50" class="annotation">根据结果调整</text>
+  </g>
+
+  <!-- Arrows between row 2 -->
+  <line x1="240" y1="277" x2="280" y2="277" stroke="#6366f1" stroke-width="1.5" marker-end="url(#arrow-flow)"/>
+  <line x1="415" y1="277" x2="455" y2="277" stroke="#6366f1" stroke-width="1.5" marker-end="url(#arrow-flow)"/>
+
+  <!-- Loop back arrow for iteration -->
+  <path d="M 525 310 Q 540 330 520 345 Q 350 370 220 345 Q 200 330 220 310"
+        fill="none" stroke="#f59e0b" stroke-width="1.5" stroke-dasharray="5,3"/>
+  <text x="350" y="365" class="annotation" style="fill: #f59e0b;">测试失败时循环</text>
+
+  <!-- Step 7: Commit -->
+  <g transform="translate(285, 340)">
+    <rect x="0" y="0" width="130" height="45" fill="url(#step7-grad)" stroke="#16a34a" stroke-width="2" rx="6"/>
+    <circle cx="20" cy="15" r="12" fill="#16a34a"/>
+    <text x="20" y="19" class="step-num">7</text>
+    <text x="75" y="28" class="box-text">提交变更</text>
+  </g>
+
+  <!-- Arrow from step 6 to step 7 -->
+  <path d="M 525 310 L 525 362 L 420 362" fill="none" stroke="#6366f1" stroke-width="1.5" marker-end="url(#arrow-flow)"/>
+  <text x="475" y="355" class="annotation" style="fill: #16a34a;">测试通过</text>
+</svg>

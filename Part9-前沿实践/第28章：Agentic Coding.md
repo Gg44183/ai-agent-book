@@ -68,6 +68,8 @@
 +-------------------+
 ```
 
+![Agentic Coding 自主编程完整流程](assets/agentic-coding-flow.svg)
+
 ### 核心能力分解
 
 Agentic Coding 需要以下能力的协同：
@@ -478,6 +480,8 @@ Agentic Coding 不是一次生成就结束。Agent 需要运行测试、分析�
                      |
                      +----> 回到"运行测试"
 ```
+
+![测试驱动的迭代循环](assets/edit-test-fix-loop.svg)
 
 ### 错误分析与修复
 

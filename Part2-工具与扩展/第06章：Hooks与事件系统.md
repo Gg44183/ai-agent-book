@@ -26,23 +26,7 @@
 
 有了 Hooks：
 
-```
-Agent执行流程                    Hook触发点
-──────────────────────────────────────────────
-开始工作流       ────────▶     WORKFLOW_STARTED
-  ↓
-Agent开始思考    ────────▶     AGENT_THINKING
-  ↓
-调用工具        ────────▶     TOOL_INVOKED
-  ↓
-获得结果        ────────▶     TOOL_OBSERVATION
-  ↓
-需要审批？      ────────▶     APPROVAL_REQUESTED
-  ↓                           (等待人工决策)
-继续执行        ────────▶     APPROVAL_DECISION
-  ↓
-Agent完成       ────────▶     AGENT_COMPLETED
-```
+![Hooks 事件触发流程](assets/hook-execution-flow.svg)
 
 你可以订阅任何一个事件点，做自己想做的事——记日志、发通知、暂停流程、人工审批。
 

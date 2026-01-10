@@ -87,6 +87,8 @@ Background Agent 打破了用户会话和任务执行的绑定：
     |<───返回历史记录─────────|                           |
 ```
 
+![Background Agent 异步解耦流程](assets/background-agent-async-flow.svg)
+
 核心特征：
 
 1. **解耦**：用户会话和任务执行完全分离

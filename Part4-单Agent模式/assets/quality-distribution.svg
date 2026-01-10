@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 200">
+  <defs>
+    <style>
+      .label { font: 500 10px 'SF Mono', 'Menlo', 'Monaco', monospace; fill: #666; text-anchor: start; letter-spacing: 0.5px; }
+      .title { font: 600 12px 'SF Mono', 'Menlo', 'Monaco', monospace; fill: #1a1a1a; letter-spacing: 1px; }
+      .percent { font: 700 11px 'SF Mono', 'Menlo', 'Monaco', monospace; fill: #1a1a1a; text-anchor: end; }
+      .bar-label { font: 500 10px 'SF Mono', 'Menlo', 'Monaco', monospace; fill: #1a1a1a; text-anchor: start; }
+    </style>
+    <!-- Patterns for bars -->
+    <pattern id="excellent-pattern" width="4" height="4" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="0.8" fill="#059669" opacity="0.3"/>
+    </pattern>
+    <pattern id="good-pattern" width="4" height="4" patternUnits="userSpaceOnUse">
+      <line x1="0" y1="4" x2="4" y2="0" stroke="#0891b2" stroke-width="0.5" opacity="0.3"/>
+    </pattern>
+    <pattern id="average-pattern" width="4" height="4" patternUnits="userSpaceOnUse">
+      <line x1="0" y1="2" x2="4" y2="2" stroke="#ca8a04" stroke-width="0.5" opacity="0.3"/>
+    </pattern>
+    <pattern id="poor-pattern" width="4" height="4" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="0.6" fill="#dc2626" opacity="0.3"/>
+    </pattern>
+  </defs>
+
+  <!-- White background -->
+  <rect width="480" height="200" fill="#fff"/>
+
+  <!-- Title -->
+  <text x="240" y="25" class="title" text-anchor="middle">LLM OUTPUT QUALITY DISTRIBUTION</text>
+  <text x="240" y="40" class="label" text-anchor="middle">质量分布（非正式实验）</text>
+
+  <!-- Excellent bar (15%) -->
+  <g transform="translate(80, 60)">
+    <text x="-5" y="15" class="bar-label" text-anchor="end">优秀</text>
+    <text x="-5" y="27" class="label" text-anchor="end" style="font-size: 8px; fill: #999;">Excellent</text>
+    <rect x="0" y="0" width="60" height="30" fill="#d1fae5" stroke="#1a1a1a" stroke-width="1"/>
+    <rect x="0" y="0" width="60" height="30" fill="url(#excellent-pattern)"/>
+    <text x="320" y="20" class="percent">15%</text>
+  </g>
+
+  <!-- Good bar (45%) -->
+  <g transform="translate(80, 95)">
+    <text x="-5" y="15" class="bar-label" text-anchor="end">良好</text>
+    <text x="-5" y="27" class="label" text-anchor="end" style="font-size: 8px; fill: #999;">Good</text>
+    <rect x="0" y="0" width="180" height="30" fill="#cffafe" stroke="#1a1a1a" stroke-width="1"/>
+    <rect x="0" y="0" width="180" height="30" fill="url(#good-pattern)"/>
+    <text x="320" y="20" class="percent">45%</text>
+  </g>
+
+  <!-- Average bar (30%) -->
+  <g transform="translate(80, 130)">
+    <text x="-5" y="15" class="bar-label" text-anchor="end">一般</text>
+    <text x="-5" y="27" class="label" text-anchor="end" style="font-size: 8px; fill: #999;">Average</text>
+    <rect x="0" y="0" width="120" height="30" fill="#fef3c7" stroke="#1a1a1a" stroke-width="1"/>
+    <rect x="0" y="0" width="120" height="30" fill="url(#average-pattern)"/>
+    <text x="320" y="20" class="percent">30%</text>
+  </g>
+
+  <!-- Poor bar (10%) -->
+  <g transform="translate(80, 165)">
+    <text x="-5" y="15" class="bar-label" text-anchor="end">较差</text>
+    <text x="-5" y="27" class="label" text-anchor="end" style="font-size: 8px; fill: #999;">Poor</text>
+    <rect x="0" y="0" width="40" height="30" fill="#fee2e2" stroke="#1a1a1a" stroke-width="1"/>
+    <rect x="0" y="0" width="40" height="30" fill="url(#poor-pattern)"/>
+    <text x="320" y="20" class="percent">10%</text>
+
+    <!-- Annotation for poor -->
+    <line x1="45" y1="15" x2="100" y2="15" stroke="#dc2626" stroke-width="1" stroke-dasharray="3,2"/>
+    <text x="105" y="12" class="label" style="fill: #dc2626; font-size: 9px;">Reflection 目标区域</text>
+    <text x="105" y="24" class="label" style="fill: #999; font-size: 8px;">Target for improvement</text>
+  </g>
+</svg>

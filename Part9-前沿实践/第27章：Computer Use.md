@@ -46,6 +46,8 @@ Computer Use 的本质是：**把界面操作这件事，从"人类专属"变成
 +----------+                 +--------------+
 ```
 
+![传统 Agent vs Computer Use Agent](assets/traditional-vs-computer-use.svg)
+
 ### 核心能力分解
 
 Computer Use 不是单一能力，而是四个能力的组合：
@@ -112,6 +114,8 @@ Computer Use 的核心是一个持续的循环，和 ReAct 模式很像，只不
 +-----------------------------------------------------------+
 ```
 
+![Computer Use Agent 感知-决策-执行循环](assets/computer-use-loop.svg)
+
 ### 三层解耦
 
 在生产系统中，我建议把 Computer Use 分成三层：
@@ -174,6 +178,8 @@ Computer Use 通常作为一个专门的"浏览器 Agent"存在，由 Orchestrat
 |  (Playwright / CDP / Puppeteer)                           |
 +-----------------------------------------------------------+
 ```
+
+![多 Agent 系统中的 Browser Agent 编排](assets/browser-agent-orchestration.svg)
 
 ---
 

@@ -1,0 +1,93 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 420">
+  <defs>
+    <style>
+      .label { font: 500 10px 'SF Mono', 'Menlo', 'Monaco', monospace; fill: #666; text-anchor: middle; letter-spacing: 0.5px; }
+      .box-text { font: 600 12px 'SF Mono', 'Menlo', 'Monaco', monospace; fill: #1a1a1a; text-anchor: middle; }
+      .box-text-en { font: 500 9px 'SF Mono', 'Menlo', 'Monaco', monospace; fill: #666; text-anchor: middle; }
+      .title { font: 600 14px 'SF Mono', 'Menlo', 'Monaco', monospace; fill: #1a1a1a; text-anchor: middle; letter-spacing: 1px; }
+      .annotation { font: 400 9px 'SF Mono', 'Menlo', 'Monaco', monospace; fill: #666; }
+      .code { font: 500 9px 'SF Mono', 'Menlo', 'Monaco', monospace; fill: #1a1a1a; }
+      .round { font: 600 11px 'SF Mono', 'Menlo', 'Monaco', monospace; fill: #fff; text-anchor: middle; }
+    </style>
+    <marker id="arrow" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#666"/>
+    </marker>
+    <marker id="arrow-teal" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#0d9488"/>
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="680" height="420" fill="#fff"/>
+
+  <!-- Title -->
+  <text x="340" y="28" class="title">MULTI-ROUND TOOL CALLING</text>
+  <text x="340" y="45" class="label">多轮工具调用 (ReAct 循环)</text>
+
+  <!-- User Query -->
+  <rect x="200" y="60" width="280" height="35" fill="#fce7f3" stroke="#1a1a1a" stroke-width="1.5" rx="2"/>
+  <text x="340" y="82" class="box-text">"比较苹果和微软的市值"</text>
+
+  <!-- Arrow down -->
+  <line x1="340" y1="95" x2="340" y2="125" stroke="#666" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- Round 1 -->
+  <g transform="translate(0, 130)">
+    <!-- Round badge -->
+    <circle cx="100" cy="45" r="18" fill="#0891b2" stroke="#1a1a1a" stroke-width="1.5"/>
+    <text x="100" y="50" class="round">1</text>
+
+    <!-- Think -->
+    <rect x="140" y="0" width="200" height="30" fill="#dbeafe" stroke="#1a1a1a" stroke-width="1.5" rx="2"/>
+    <text x="240" y="20" class="box-text">思考: 需要查苹果市值</text>
+
+    <!-- Action -->
+    <line x1="340" y1="15" x2="380" y2="15" stroke="#666" stroke-width="1.5" marker-end="url(#arrow)"/>
+    <rect x="385" y="0" width="180" height="30" fill="#a5f3fc" stroke="#1a1a1a" stroke-width="1.5" rx="2"/>
+    <text x="475" y="20" class="code">stock_info("AAPL")</text>
+
+    <!-- Result -->
+    <line x1="475" y1="30" x2="475" y2="55" stroke="#0d9488" stroke-width="1.5" marker-end="url(#arrow-teal)"/>
+    <rect x="385" y="60" width="180" height="30" fill="#d1fae5" stroke="#1a1a1a" stroke-width="1.5" rx="2"/>
+    <text x="475" y="80" class="box-text">返回: $3.0T</text>
+    <text x="595" y="80" class="annotation">OBSERVATION</text>
+  </g>
+
+  <!-- Arrow to Round 2 -->
+  <line x1="340" y1="220" x2="340" y2="250" stroke="#666" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- Round 2 -->
+  <g transform="translate(0, 255)">
+    <!-- Round badge -->
+    <circle cx="100" cy="45" r="18" fill="#0891b2" stroke="#1a1a1a" stroke-width="1.5"/>
+    <text x="100" y="50" class="round">2</text>
+
+    <!-- Think -->
+    <rect x="140" y="0" width="200" height="30" fill="#dbeafe" stroke="#1a1a1a" stroke-width="1.5" rx="2"/>
+    <text x="240" y="20" class="box-text">思考: 需要查微软市值</text>
+
+    <!-- Action -->
+    <line x1="340" y1="15" x2="380" y2="15" stroke="#666" stroke-width="1.5" marker-end="url(#arrow)"/>
+    <rect x="385" y="0" width="180" height="30" fill="#a5f3fc" stroke="#1a1a1a" stroke-width="1.5" rx="2"/>
+    <text x="475" y="20" class="code">stock_info("MSFT")</text>
+
+    <!-- Result -->
+    <line x1="475" y1="30" x2="475" y2="55" stroke="#0d9488" stroke-width="1.5" marker-end="url(#arrow-teal)"/>
+    <rect x="385" y="60" width="180" height="30" fill="#d1fae5" stroke="#1a1a1a" stroke-width="1.5" rx="2"/>
+    <text x="475" y="80" class="box-text">返回: $2.9T</text>
+    <text x="595" y="80" class="annotation">OBSERVATION</text>
+  </g>
+
+  <!-- Arrow to Final -->
+  <line x1="340" y1="345" x2="340" y2="370" stroke="#666" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- Final Answer -->
+  <rect x="140" y="375" width="400" height="35" fill="#fef3c7" stroke="#1a1a1a" stroke-width="1.5" rx="2"/>
+  <text x="340" y="397" class="box-text">LLM 综合: 苹果市值略高于微软</text>
+
+  <!-- Side labels -->
+  <text x="60" y="175" class="annotation" style="fill: #0891b2;">THINK</text>
+  <text x="60" y="190" class="annotation" style="fill: #0891b2;">思考</text>
+  <text x="60" y="300" class="annotation" style="fill: #0891b2;">ACTION</text>
+  <text x="60" y="315" class="annotation" style="fill: #0891b2;">行动</text>
+</svg>
