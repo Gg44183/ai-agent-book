@@ -15,7 +15,7 @@
 |----------|--------|------|
 | **中文** (Chinese) | Complete | [阅读中文版](./zh/README.md) |
 | **日本語** (Japanese) | Complete | [日本語版を読む](./jp/README.md) |
-| **English** | Coming Soon | - |
+| **English** | Complete | [Read English Version](./en/README.md) |
 
 ---
 

@@ -47,13 +47,13 @@
     <g transform="translate(20, 95)">
       <circle cx="25" cy="20" r="18" fill="#0891b2"/>
       <text x="25" y="25" class="part-num">2</text>
-      <text x="90" y="18" class="part-title">Tools & Extensions</text>
+      <text x="90" y="18" class="part-title">Tools &amp; Extensions</text>
       <text x="90" y="32" class="label">MCP · Skills</text>
     </g>
     <g transform="translate(20, 135)">
       <circle cx="25" cy="20" r="18" fill="#0d9488"/>
       <text x="25" y="25" class="part-num">3</text>
-      <text x="90" y="18" class="part-title">Context & Memory</text>
+      <text x="90" y="18" class="part-title">Context &amp; Memory</text>
       <text x="90" y="32" class="label">Memory Architecture</text>
     </g>
   </g>
