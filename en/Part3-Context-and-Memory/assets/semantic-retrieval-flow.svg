@@ -1,0 +1,136 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 320">
+  <defs>
+    <style>
+      .label { font: 500 10px 'SF Mono', 'Menlo', 'Monaco', monospace; fill: #666; text-anchor: middle; letter-spacing: 0.5px; }
+      .box-text { font: 600 12px 'SF Mono', 'Menlo', 'Monaco', monospace; fill: #1a1a1a; text-anchor: middle; }
+      .title { font: 700 14px 'SF Mono', 'Menlo', 'Monaco', monospace; fill: #1a1a1a; text-anchor: middle; letter-spacing: 1px; }
+      .annotation { font: 400 9px 'SF Mono', 'Menlo', 'Monaco', monospace; fill: #666; }
+      .code-text { font: 500 9px 'SF Mono', 'Menlo', 'Monaco', monospace; fill: #1a1a1a; }
+      .vector-text { font: 400 8px 'SF Mono', 'Menlo', 'Monaco', monospace; fill: #7c3aed; }
+    </style>
+    <marker id="arrow-flow" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#0891b2"/>
+    </marker>
+    <!-- Gradient for pipeline -->
+    <linearGradient id="pipeline-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#dbeafe"/>
+      <stop offset="25%" style="stop-color:#a5f3fc"/>
+      <stop offset="50%" style="stop-color:#c4b5fd"/>
+      <stop offset="75%" style="stop-color:#fce7f3"/>
+      <stop offset="100%" style="stop-color:#d1fae5"/>
+    </linearGradient>
+    <!-- Dot pattern for vector space -->
+    <pattern id="vector-dots" width="10" height="10" patternUnits="userSpaceOnUse">
+      <circle cx="5" cy="5" r="1" fill="#7c3aed" opacity="0.3"/>
+    </pattern>
+  </defs>
+
+  <!-- Background -->
+  <rect width="720" height="320" fill="#fff"/>
+
+  <!-- Title -->
+  <text x="360" y="28" class="title">SEMANTIC RETRIEVAL FLOW</text>
+  <text x="360" y="45" class="label">Semantic Search Pipeline</text>
+
+  <!-- Pipeline background bar -->
+  <rect x="40" y="130" width="640" height="8" fill="#e5e7eb" rx="4"/>
+  <rect x="40" y="130" width="640" height="8" fill="url(#pipeline-grad)" rx="4" opacity="0.6"/>
+
+  <!-- Step 1: User Query -->
+  <g transform="translate(80, 75)">
+    <rect x="-50" y="0" width="100" height="50" fill="#dbeafe" stroke="#1a1a1a" stroke-width="1.5" rx="4"/>
+    <text x="0" y="20" class="code-text">"How to optimize</text>
+    <text x="0" y="32" class="code-text">React components?"</text>
+    <text x="0" y="50" class="label">User Query</text>
+
+    <!-- Arrow down to pipeline -->
+    <line x1="0" y1="50" x2="0" y2="55" stroke="#0891b2" stroke-width="2" marker-end="url(#arrow-flow)"/>
+  </g>
+
+  <!-- Step 2: Embedding -->
+  <g transform="translate(220, 75)">
+    <rect x="-60" y="0" width="120" height="50" fill="#a5f3fc" stroke="#1a1a1a" stroke-width="1.5" rx="4"/>
+    <text x="0" y="18" class="box-text">Generate Embedding</text>
+    <text x="0" y="35" class="vector-text">[0.12, 0.45, -0.23, ...]</text>
+    <text x="0" y="50" class="label">VECTORIZE</text>
+
+    <line x1="0" y1="50" x2="0" y2="55" stroke="#0891b2" stroke-width="2" marker-end="url(#arrow-flow)"/>
+  </g>
+
+  <!-- Step 3: Vector Search (highlighted) -->
+  <g transform="translate(380, 65)">
+    <!-- Vector space visualization -->
+    <rect x="-80" y="0" width="160" height="70" fill="#ede9fe" stroke="#7c3aed" stroke-width="2" rx="4"/>
+    <rect x="-80" y="0" width="160" height="70" fill="url(#vector-dots)" rx="4"/>
+
+    <!-- Points representing vectors -->
+    <circle cx="-40" cy="25" r="5" fill="#7c3aed"/>
+    <circle cx="0" cy="35" r="6" fill="#f59e0b" stroke="#1a1a1a" stroke-width="1"/>
+    <circle cx="30" cy="20" r="5" fill="#7c3aed"/>
+    <circle cx="-20" cy="45" r="5" fill="#7c3aed"/>
+    <circle cx="50" cy="40" r="5" fill="#7c3aed"/>
+
+    <!-- Similarity lines -->
+    <line x1="0" y1="35" x2="-40" y2="25" stroke="#f59e0b" stroke-width="1" stroke-dasharray="3,2" opacity="0.7"/>
+    <line x1="0" y1="35" x2="30" y2="20" stroke="#f59e0b" stroke-width="1" stroke-dasharray="3,2" opacity="0.7"/>
+
+    <text x="0" y="58" class="box-text" style="fill: #5b21b6;">Vector Similarity Search</text>
+    <text x="0" y="72" class="label" style="fill: #7c3aed;">QDRANT SEARCH</text>
+
+    <line x1="0" y1="70" x2="0" y2="65" stroke="#0891b2" stroke-width="2" marker-end="url(#arrow-flow)"/>
+  </g>
+
+  <!-- Step 4: Results -->
+  <g transform="translate(540, 75)">
+    <rect x="-70" y="0" width="140" height="50" fill="#fce7f3" stroke="#1a1a1a" stroke-width="1.5" rx="4"/>
+    <text x="0" y="18" class="box-text">Matched Results</text>
+    <text x="0" y="35" class="annotation">Score: 0.92</text>
+    <text x="0" y="50" class="label">TOP-K RESULTS</text>
+
+    <line x1="0" y1="50" x2="0" y2="55" stroke="#0891b2" stroke-width="2" marker-end="url(#arrow-flow)"/>
+  </g>
+
+  <!-- Step 5: Return -->
+  <g transform="translate(660, 75)">
+    <rect x="-40" y="0" width="80" height="50" fill="#d1fae5" stroke="#1a1a1a" stroke-width="1.5" rx="4"/>
+    <text x="0" y="18" class="code-text">"Frontend perf</text>
+    <text x="0" y="30" class="code-text">optimization..."</text>
+    <text x="0" y="50" class="label">Return</text>
+  </g>
+
+  <!-- Flow arrows between steps -->
+  <line x1="130" y1="134" x2="160" y2="134" stroke="#0891b2" stroke-width="2" marker-end="url(#arrow-flow)"/>
+  <line x1="280" y1="134" x2="300" y2="134" stroke="#0891b2" stroke-width="2" marker-end="url(#arrow-flow)"/>
+  <line x1="460" y1="134" x2="470" y2="134" stroke="#0891b2" stroke-width="2" marker-end="url(#arrow-flow)"/>
+  <line x1="610" y1="134" x2="620" y2="134" stroke="#0891b2" stroke-width="2" marker-end="url(#arrow-flow)"/>
+
+  <!-- Bottom annotation -->
+  <g transform="translate(40, 180)">
+    <rect x="0" y="0" width="640" height="110" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1" rx="4"/>
+
+    <!-- Key insight boxes -->
+    <g transform="translate(20, 15)">
+      <rect x="0" y="0" width="180" height="80" fill="#fff" stroke="#e2e8f0" stroke-width="1" rx="2"/>
+      <text x="90" y="20" class="box-text" style="font-size: 10px; fill: #ef4444;">Traditional Query</text>
+      <text x="90" y="38" class="annotation">LIKE '%React optimize%'</text>
+      <text x="90" y="55" class="annotation" style="fill: #ef4444;">X Not found</text>
+      <text x="90" y="72" class="annotation">String mismatch</text>
+    </g>
+
+    <g transform="translate(230, 15)">
+      <rect x="0" y="0" width="180" height="80" fill="#fff" stroke="#e2e8f0" stroke-width="1" rx="2"/>
+      <text x="90" y="20" class="box-text" style="font-size: 10px; fill: #10b981;">Semantic Search</text>
+      <text x="90" y="38" class="annotation">cosine_sim(query, doc)</text>
+      <text x="90" y="55" class="annotation" style="fill: #10b981;">Found relevant content</text>
+      <text x="90" y="72" class="annotation">"frontend perf" ~ "React opt"</text>
+    </g>
+
+    <g transform="translate(440, 15)">
+      <rect x="0" y="0" width="180" height="80" fill="#ede9fe" stroke="#7c3aed" stroke-width="1" rx="2"/>
+      <text x="90" y="20" class="box-text" style="font-size: 10px; fill: #7c3aed;">Core Value</text>
+      <text x="90" y="40" class="annotation" style="fill: #5b21b6;">Search by semantic similarity</text>
+      <text x="90" y="55" class="annotation" style="fill: #5b21b6;">Not exact string match</text>
+      <text x="90" y="72" class="annotation" style="fill: #5b21b6;">Threshold: 0.7</text>
+    </g>
+  </g>
+</svg>

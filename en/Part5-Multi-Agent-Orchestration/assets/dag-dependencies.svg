@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 420">
+  <defs>
+    <style>
+      .label { font: 500 10px 'SF Mono', 'Menlo', 'Monaco', monospace; fill: #666; text-anchor: middle; letter-spacing: 0.5px; }
+      .node-text { font: 700 16px 'SF Mono', 'Menlo', 'Monaco', monospace; fill: #1a1a1a; text-anchor: middle; }
+      .title { font: 700 16px 'SF Mono', 'PingFang SC', sans-serif; fill: #1a1a1a; text-anchor: middle; }
+      .note { font: 400 10px 'SF Mono', 'PingFang SC', monospace; fill: #888; text-anchor: start; }
+    </style>
+    <marker id="arrow" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#666"/>
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="500" height="420" fill="#fff"/>
+
+  <!-- Title -->
+  <text x="250" y="30" class="title">DAG Dependency Graph</text>
+  <text x="250" y="47" class="label">DIRECTED ACYCLIC GRAPH</text>
+
+  <!-- Node A (root) - Yellow -->
+  <circle cx="250" cy="90" r="28" fill="#fde047" stroke="#1a1a1a" stroke-width="1.5"/>
+  <text x="250" y="96" class="node-text">A</text>
+
+  <!-- Arrows from A -->
+  <line x1="230" y1="115" x2="150" y2="165" stroke="#666" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="270" y1="115" x2="350" y2="165" stroke="#666" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <path d="M 278 90 L 420 90 L 420 175" fill="none" stroke="#666" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- Node B - Yellow (parallel with A) -->
+  <circle cx="420" cy="200" r="28" fill="#fde047" stroke="#1a1a1a" stroke-width="1.5"/>
+  <text x="420" y="206" class="node-text">B</text>
+
+  <!-- Node C - Cyan -->
+  <circle cx="130" cy="200" r="28" fill="#67e8f9" stroke="#1a1a1a" stroke-width="1.5"/>
+  <text x="130" y="206" class="node-text">C</text>
+
+  <!-- Node D - Cyan -->
+  <circle cx="370" cy="200" r="28" fill="#67e8f9" stroke="#1a1a1a" stroke-width="1.5"/>
+  <text x="370" y="206" class="node-text">D</text>
+
+  <!-- Arrows from C, D to E -->
+  <line x1="150" y1="225" x2="230" y2="275" stroke="#666" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="350" y1="225" x2="270" y2="275" stroke="#666" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- Arrow from B to E -->
+  <path d="M 420 228 L 420 300 L 278 300" fill="none" stroke="#666" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- Node E - Teal -->
+  <circle cx="250" cy="300" r="28" fill="#5eead4" stroke="#1a1a1a" stroke-width="1.5"/>
+  <text x="250" y="306" class="node-text">E</text>
+
+  <!-- Arrow from E to F -->
+  <line x1="250" y1="328" x2="250" y2="355" stroke="#666" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- Node F (terminal) - Green -->
+  <circle cx="250" cy="380" r="28" fill="#10b981" stroke="#1a1a1a" stroke-width="1.5"/>
+  <text x="250" y="386" class="node-text">F</text>
+
+  <!-- Annotations -->
+  <text x="40" y="95" class="note">No deps, parallelizable</text>
+  <line x1="120" y1="92" x2="220" y2="92" stroke="#ccc" stroke-width="1" stroke-dasharray="3,2"/>
+
+  <text x="40" y="205" class="note">Depends on A</text>
+  <text x="40" y="305" class="note">Depends on A, B, C, D</text>
+  <text x="40" y="385" class="note">Depends on E (terminal)</text>
+
+  <!-- Legend -->
+  <rect x="320" y="360" width="160" height="50" fill="#f8fafc" stroke="#e5e7eb" stroke-width="1" rx="3"/>
+  <circle cx="340" cy="375" r="8" fill="#fde047" stroke="#1a1a1a" stroke-width="1"/>
+  <text x="355" y="379" class="note" style="fill: #444;">Root node (no deps)</text>
+  <circle cx="340" cy="395" r="8" fill="#10b981" stroke="#1a1a1a" stroke-width="1"/>
+  <text x="355" y="399" class="note" style="fill: #444;">Terminal node</text>
+</svg>

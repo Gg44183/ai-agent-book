@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 280">
+  <defs>
+    <style>
+      .label { font: 500 9px 'SF Mono', 'Menlo', 'Monaco', monospace; fill: #666; text-anchor: middle; }
+      .box-text { font: 600 11px 'SF Mono', 'Menlo', 'Monaco', monospace; fill: #1a1a1a; text-anchor: middle; }
+      .msg-text { font: 400 8px 'SF Mono', 'Menlo', 'Monaco', monospace; fill: #1a1a1a; }
+    </style>
+    <marker id="arrow-p2p" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#666"/>
+    </marker>
+  </defs>
+  <rect width="400" height="280" fill="#fff"/>
+
+  <!-- Title -->
+  <text x="200" y="20" class="label" style="font-size: 11px; fill: #1a1a1a;">P2P NEGOTIATION PROTOCOL</text>
+
+  <!-- Supervisor box -->
+  <rect x="50" y="40" width="100" height="40" fill="#a5f3fc" stroke="#1a1a1a" stroke-width="1.5" rx="2"/>
+  <text x="100" y="65" class="box-text">Supervisor</text>
+
+  <!-- Agent A box -->
+  <rect x="250" y="40" width="100" height="40" fill="#d1fae5" stroke="#1a1a1a" stroke-width="1.5" rx="2"/>
+  <text x="300" y="65" class="box-text">Agent A</text>
+
+  <!-- Lifelines -->
+  <line x1="100" y1="80" x2="100" y2="260" stroke="#ccc" stroke-width="1" stroke-dasharray="4,2"/>
+  <line x1="300" y1="80" x2="300" y2="260" stroke="#ccc" stroke-width="1" stroke-dasharray="4,2"/>
+
+  <!-- Message 1: TaskRequest -->
+  <line x1="100" y1="100" x2="290" y2="100" stroke="#666" stroke-width="1.5" marker-end="url(#arrow-p2p)"/>
+  <text x="195" y="95" class="msg-text" text-anchor="middle">TaskRequest (broadcast)</text>
+
+  <!-- Message 2: TaskOffer -->
+  <line x1="300" y1="140" x2="110" y2="140" stroke="#666" stroke-width="1.5" marker-end="url(#arrow-p2p)"/>
+  <text x="205" y="135" class="msg-text" text-anchor="middle">TaskOffer (confidence=0.85)</text>
+
+  <!-- Message 3: TaskAccept -->
+  <line x1="100" y1="180" x2="290" y2="180" stroke="#666" stroke-width="1.5" marker-end="url(#arrow-p2p)"/>
+  <text x="195" y="175" class="msg-text" text-anchor="middle">TaskAccept</text>
+
+  <!-- Execution box -->
+  <rect x="285" y="195" width="30" height="25" fill="#fef3c7" stroke="#1a1a1a" stroke-width="1" rx="1"/>
+  <text x="300" y="212" class="label" style="font-size: 7px;">Exec</text>
+
+  <!-- Message 4: Info result -->
+  <line x1="300" y1="235" x2="110" y2="235" stroke="#666" stroke-width="1.5" marker-end="url(#arrow-p2p)"/>
+  <text x="205" y="230" class="msg-text" text-anchor="middle">Info (result)</text>
+</svg>

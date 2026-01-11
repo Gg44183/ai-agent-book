@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 280">
+  <defs>
+    <style>
+      .label { font: 500 9px 'SF Mono', 'Menlo', 'Monaco', monospace; fill: #666; text-anchor: middle; }
+      .layer-num { font: 700 11px 'SF Mono', 'Menlo', 'Monaco', monospace; fill: #fff; text-anchor: middle; }
+      .layer-name { font: 600 11px 'SF Mono', 'Menlo', 'Monaco', monospace; fill: #1a1a1a; text-anchor: start; }
+      .layer-desc { font: 400 9px 'SF Mono', 'Menlo', 'Monaco', monospace; fill: #666; text-anchor: start; }
+      .title { font: 600 12px 'SF Mono', 'Menlo', 'Monaco', monospace; fill: #1a1a1a; text-anchor: middle; }
+    </style>
+  </defs>
+  <rect width="520" height="280" fill="#fff"/>
+
+  <!-- Title -->
+  <text x="260" y="22" class="title">MULTI-LAYER TENANT ISOLATION</text>
+  <text x="260" y="38" class="label">Five-Layer Tenant Isolation Architecture</text>
+
+  <!-- Layer 1: Authentication Layer -->
+  <rect x="60" y="55" width="400" height="36" fill="#fce7f3" stroke="#1a1a1a" stroke-width="1.5" rx="2"/>
+  <circle cx="85" cy="73" r="12" fill="#ec4899"/>
+  <text x="85" y="77" class="layer-num">1</text>
+  <text x="110" y="70" class="layer-name">Authentication Layer</text>
+  <text x="110" y="83" class="layer-desc">JWT/API Key binds tenant_id</text>
+
+  <!-- Layer 2: Session Layer -->
+  <rect x="60" y="95" width="400" height="36" fill="#dbeafe" stroke="#1a1a1a" stroke-width="1.5" rx="2"/>
+  <circle cx="85" cy="113" r="12" fill="#3b82f6"/>
+  <text x="85" y="117" class="layer-num">2</text>
+  <text x="110" y="110" class="layer-name">Session Layer</text>
+  <text x="110" y="123" class="layer-desc">Session query filters by tenant_id</text>
+
+  <!-- Layer 3: Workflow Layer -->
+  <rect x="60" y="135" width="400" height="36" fill="#d1fae5" stroke="#1a1a1a" stroke-width="1.5" rx="2"/>
+  <circle cx="85" cy="153" r="12" fill="#10b981"/>
+  <text x="85" y="157" class="layer-num">3</text>
+  <text x="110" y="150" class="layer-name">Workflow Layer</text>
+  <text x="110" y="163" class="layer-desc">Workflow Memo stores tenant_id</text>
+
+  <!-- Layer 4: Vector Layer -->
+  <rect x="60" y="175" width="400" height="36" fill="#fef3c7" stroke="#1a1a1a" stroke-width="1.5" rx="2"/>
+  <circle cx="85" cy="193" r="12" fill="#f59e0b"/>
+  <text x="85" y="197" class="layer-num">4</text>
+  <text x="110" y="190" class="layer-name">Vector Layer</text>
+  <text x="110" y="203" class="layer-desc">Vector Search filters by tenant_id</text>
+
+  <!-- Layer 5: Database Layer -->
+  <rect x="60" y="215" width="400" height="36" fill="#e0e7ff" stroke="#1a1a1a" stroke-width="1.5" rx="2"/>
+  <circle cx="85" cy="233" r="12" fill="#6366f1"/>
+  <text x="85" y="237" class="layer-num">5</text>
+  <text x="110" y="230" class="layer-name">Database Layer</text>
+  <text x="110" y="243" class="layer-desc">SQL WHERE enforces tenant_id</text>
+
+  <!-- Footer note -->
+  <text x="260" y="268" class="label">Each layer validates tenant ownership to prevent unauthorized access</text>
+</svg>
