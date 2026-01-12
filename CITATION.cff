@@ -1,0 +1,27 @@
+cff-version: 1.2.0
+message: "If you use this book, please cite it as below."
+authors:
+  - family-names: Zhang
+    given-names: Wayland
+    orcid: https://orcid.org/0009-0005-5857-5434
+title: "AI Agent Architecture: From Monolith to Enterprise Multi-Agent"
+type: book
+date-released: 2026-01-01
+url: "https://waylandz.com/ai-agent-book"
+repository-code: "https://github.com/Kocoro-lab/ai-agent-book"
+license: CC-BY-NC-SA-4.0
+keywords:
+  - ai-agents
+  - llm
+  - multi-agent-systems
+  - machine-learning
+  - software-architecture
+preferred-citation:
+  type: book
+  authors:
+    - family-names: Zhang
+      given-names: Wayland
+      orcid: https://orcid.org/0009-0005-5857-5434
+  title: "AI Agent Architecture: From Monolith to Enterprise Multi-Agent"
+  year: 2026
+  url: "https://waylandz.com/ai-agent-book"

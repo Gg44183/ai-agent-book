@@ -51,6 +51,26 @@ LLM Service (Python) - Inference, Tools, Vectors
 
 ---
 
+## Citation
+
+If you use this book in your research or work, please cite it:
+
+```bibtex
+@book{zhang2026aiagent,
+  author = {Zhang, Wayland},
+  title = {AI Agent Architecture: From Monolith to Enterprise Multi-Agent},
+  year = {2026},
+  url = {https://waylandz.com/ai-agent-book},
+  publisher = {Self-published}
+}
+```
+
+Or in APA format:
+
+> Zhang, Wayland. (2026). *AI Agent Architecture: From Monolith to Enterprise Multi-Agent*. https://waylandz.com/ai-agent-book
+
+---
+
 ## License
 
 Book content: [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/)

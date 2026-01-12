@@ -178,6 +178,26 @@ AI Agent 领域发展极快。本书对高变动性内容会明确标注：
 
 ---
 
+## 引用 / Citation
+
+如果本书对您的研究或工作有帮助，请引用：
+
+```bibtex
+@book{zhang2026aiagent,
+  author = {Zhang, Wayland},
+  title = {AI Agent Architecture: From Monolith to Enterprise Multi-Agent},
+  year = {2026},
+  url = {https://waylandz.com/ai-agent-book},
+  publisher = {Self-published}
+}
+```
+
+或使用 APA 格式：
+
+> Zhang, Wayland. (2026). *AI Agent 架构：从单体到企业级多智能体*. https://waylandz.com/ai-agent-book
+
+---
+
 ## License
 
 本书内容采用 [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/) 协议。

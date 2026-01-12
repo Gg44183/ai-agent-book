@@ -178,6 +178,26 @@ AIエージェント分野は極めて速いペースで進化しています。
 
 ---
 
+## 引用 / Citation
+
+本書が研究や業務に役立った場合は、以下の形式で引用してください：
+
+```bibtex
+@book{zhang2026aiagent,
+  author = {Zhang, Wayland},
+  title = {AI Agent Architecture: From Monolith to Enterprise Multi-Agent},
+  year = {2026},
+  url = {https://waylandz.com/ai-agent-book},
+  publisher = {Self-published}
+}
+```
+
+APA形式：
+
+> Zhang, Wayland. (2026). *AIエージェントアーキテクチャ：単体からエンタープライズ級マルチエージェントへ*. https://waylandz.com/ai-agent-book
+
+---
+
 ## ライセンス
 
 本書のコンテンツは[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/)ライセンスの下で公開されています。
