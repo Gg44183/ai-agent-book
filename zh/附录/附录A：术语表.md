@@ -16,7 +16,7 @@
 ### Agentic Coding（Agent 编程）
 **定义**：由 AI Agent 自主完成代码生成、调试、测试和部署的编程范式。Agent 理解需求、规划实现、编写代码并迭代优化。
 **英文**：Agentic Coding
-**相关章节**：第 27 章
+**相关章节**：第 28 章
 **示例**：开发者描述需求"添加用户认证"，Agent 自动生成代码、编写测试、提交 PR
 **相关术语**：[Computer Use](#computer-use计算机使用)、[Reflection](#reflection反思)
 
@@ -41,7 +41,7 @@
 ### Background Agent（后台 Agent）
 **定义**：在后台持续运行的 Agent，执行定时任务、监控事件或处理异步请求。不需要实时用户交互。
 **英文**：Background Agent
-**相关章节**：第 28 章
+**相关章节**：第 29 章
 **示例**：每小时自动抓取竞品信息，分析趋势，生成周报并发送邮件
 **相关术语**：[Asynchronous Workflow](#asynchronous-workflow异步工作流)、[Temporal](#temporal工作流引擎)
 
@@ -87,14 +87,14 @@
 ### Computer Use（计算机使用）
 **定义**：Agent 通过操作浏览器、桌面应用或命令行工具与计算机环境交互的能力。实现自动化 RPA 和复杂任务执行。
 **英文**：Computer Use
-**相关章节**：第 26 章
+**相关章节**：第 27 章
 **示例**：Agent 打开浏览器，登录系统，填写表单，上传文件，截图确认结果
 **相关术语**：[Tool Use](#tool-use工具调用)、[Agentic Coding](#agentic-coding-agent-编程)
 
 ### Context Window（上下文窗口）
 **定义**：LLM 一次能够处理的最大 Token 数量。包括输入提示词、历史对话和输出内容。
 **英文**：Context Window
-**相关章节**：第 9 章、第 10 章
+**相关章节**：第 7 章、第 9 章
 **示例**：GPT-4 的上下文窗口为 128K Token，约 96,000 个英文单词
 **相关术语**：[Token](#tokentoken令牌)、[Summarization](#summarization摘要压缩)
 
@@ -112,7 +112,7 @@
 ### DAG（有向无环图）
 **定义**：Directed Acyclic Graph，节点代表任务，边代表依赖关系的图结构。用于定义多 Agent 工作流的执行顺序。
 **英文**：DAG (Directed Acyclic Graph)
-**相关章节**：第 15 章、第 21 章
+**相关章节**：第 14 章、第 21 章
 **示例**：研究任务：搜索（节点 A）→ 分析（节点 B、C 并行）→ 综合（节点 D 依赖 B、C）
 **相关术语**：[Orchestrator](#orchestrator编排器)、[Temporal](#temporal工作流引擎)
 
@@ -162,7 +162,7 @@
 ### Function Calling（函数调用）
 **定义**：LLM 根据对话生成结构化的函数调用请求，由系统执行并返回结果。是 Tool Use 的标准化实现方式。
 **英文**：Function Calling
-**相关章节**：第 4 章、第 5 章
+**相关章节**：第 3 章、第 4 章
 **示例**：用户问"北京天气"，LLM 返回 `get_weather(city="北京")`，系统调用天气 API
 **相关术语**：[Tool Use](#tool-use工具调用)、[ReAct](#react推理-行动循环)
 
@@ -191,7 +191,7 @@
 ### Hooks（钩子）
 **定义**：在 Agent 执行流程的特定时刻触发的事件回调机制。用于日志记录、监控、审计或自定义逻辑注入。
 **英文**：Hooks
-**相关章节**：第 8 章、第 29 章
+**相关章节**：第 6 章、第 29 章
 **示例**：`before_tool_call` 钩子记录工具名称和参数，`after_llm_response` 钩子过滤敏感信息
 **相关术语**：[Plugins](#plugins插件)、[Observability](#observability可观测性)
 
@@ -231,7 +231,7 @@
 ### MCP（模型上下文协议）
 **定义**：Model Context Protocol，标准化 LLM 与外部数据源、工具连接的开放协议。定义资源、工具和提示词的发现与调用规范。
 **英文**：MCP (Model Context Protocol)
-**相关章节**：第 6 章、第 7 章
+**相关章节**：第 4 章、第 5 章
 **示例**：通过 MCP Server 暴露 Google Drive 文件，Agent 可以列出、读取和搜索文档
 **相关术语**：[Tool Use](#tool-use工具调用)、[Skills](#skills技能)
 
@@ -241,7 +241,7 @@
 ### Memory（记忆系统）
 **定义**：Agent 存储和检索历史信息的机制。包括短期记忆（当前会话）、长期记忆（持久化存储）和语义记忆（知识图谱）。
 **英文**：Memory
-**相关章节**：第 9 章、第 10 章、第 11 章
+**相关章节**：第 7 章、第 8 章、第 9 章
 **示例**：用户说"我上次提到的项目"，Agent 从 Session 中检索上下文，理解指代
 **相关术语**：[Session](#session会话)、[RAG](#ragretrieval-augmented-generation检索增强生成)
 
@@ -255,7 +255,7 @@
 ### Multi-Agent（多智能体系统）
 **定义**：多个 Agent 协作完成复杂任务的系统架构。Agent 之间可以并行、串行或动态交互。
 **英文**：Multi-Agent System
-**相关章节**：第 15 章、第 16 章、第 18 章
+**相关章节**：第 13 章、第 14 章、第 16 章
 **示例**：电商系统中，搜索 Agent、推荐 Agent 和客服 Agent 协同处理用户购物流程
 **相关术语**：[Orchestrator](#orchestrator编排器)、[DAG](#dag有向无环图)
 
@@ -280,7 +280,7 @@
 ### Orchestrator（编排器）
 **定义**：协调多个 Agent 执行复杂工作流的控制层。负责路由、调度、结果聚合和错误处理。
 **英文**：Orchestrator
-**相关章节**：第 15 章、第 21 章
+**相关章节**：第 13 章、第 21 章
 **示例**：Shannon 的 Go Orchestrator 根据 DAG 定义，并行调用 3 个 Agent，汇总结果
 **相关术语**：[DAG](#dag有向无环图)、[Multi-Agent](#multi-agent多智能体系统)
 
@@ -298,7 +298,7 @@
 ### Planning（规划）
 **定义**：Agent 在执行前制定分步计划的推理模式。将复杂目标分解为可执行的子任务序列。
 **英文**：Planning
-**相关章节**：第 12 章
+**相关章节**：第 10 章
 **示例**：用户要求"组织团建"，Agent 生成计划：1. 确定日期 2. 预订场地 3. 发送邀请
 **相关术语**：[ReAct](#react推理-行动循环)、[Tree-of-Thoughts](#tree-of-thoughtstot思维树)
 
@@ -323,7 +323,7 @@
 ### RAG（检索增强生成）
 **定义**：Retrieval-Augmented Generation，在生成回复前先检索相关文档，将检索结果作为上下文提供给 LLM 的技术。
 **英文**：RAG (Retrieval-Augmented Generation)
-**相关章节**：第 11 章、第 19 章
+**相关章节**：第 8 章、第 19 章
 **示例**：用户问"退货政策"，向量搜索找到相关文档，LLM 基于文档生成答案
 **相关术语**：[Embedding](#embedding向量嵌入)、[Vector Database](#vector-database向量数据库)
 
@@ -344,7 +344,7 @@
 ### Reflection（反思）
 **定义**：Agent 评估自身输出质量、识别错误并改进的自我优化模式。通过多轮迭代提高结果准确性。
 **英文**：Reflection
-**相关章节**：第 13 章
+**相关章节**：第 11 章
 **示例**：Agent 生成代码后，自我检查"是否有语法错误？测试覆盖率如何？"，修复问题
 **相关术语**：[Chain-of-Thought](#chain-of-thoughtcot思维链)、[Debate](#debate辩论模式)
 
@@ -362,14 +362,14 @@
 ### Session（会话）
 **定义**：用户与 Agent 的一次完整交互过程，包含多轮对话和相关上下文。会话可持久化以支持跨次对话。
 **英文**：Session
-**相关章节**：第 9 章、第 10 章
+**相关章节**：第 7 章、第 9 章
 **示例**：用户登录后的对话历史、偏好设置、未完成任务都绑定到同一个 session_id
 **相关术语**：[Memory](#memory记忆系统)、[Context Window](#context-window上下文窗口)
 
 ### Skills（技能）
 **定义**：可复用的 Agent 能力模块，封装特定领域的提示词、工具和工作流。可跨 Agent 共享和组合。
 **英文**：Skills
-**相关章节**：第 8 章
+**相关章节**：第 5 章
 **示例**：`code_review` 技能包含代码分析提示词、静态检查工具和格式化工具
 **相关术语**：[Plugins](#plugins插件)、[MCP](#mcp模型上下文协议)
 
@@ -383,7 +383,7 @@
 ### Summarization（摘要压缩）
 **定义**：将长文本压缩为简短摘要的技术。在 Agent 系统中用于应对上下文窗口限制和降低 Token 成本。
 **英文**：Summarization
-**相关章节**：第 10 章
+**相关章节**：第 7 章
 **示例**：将 1000 轮历史对话压缩为 "用户咨询退款流程，已解决" 的摘要
 **相关术语**：[Context Window](#context-window上下文窗口)、[Memory](#memory记忆系统)
 
@@ -408,7 +408,7 @@
 ### Token（令牌）
 **定义**：LLM 处理的文本最小单位，约 0.75 个英文单词或 0.5 个中文字符。LLM 计费和上下文窗口都以 Token 计量。
 **英文**：Token
-**相关章节**：第 2 章、第 23 章
+**相关章节**：第 7 章、第 23 章
 **示例**：文本 "Hello World" 约等于 2 个 Token
 **相关术语**：[Context Window](#context-window上下文窗口)、[Token Budget](#token-budget-token-预算)
 
@@ -422,7 +422,7 @@
 ### Tool Use（工具调用）
 **定义**：Agent 通过调用外部工具（API、数据库、计算器等）扩展能力的机制。是 Agent 与环境交互的核心方式。
 **英文**：Tool Use
-**相关章节**：第 4 章、第 5 章
+**相关章节**：第 3 章、第 4 章
 **示例**：调用 `search_api("Claude 3.5")` 获取最新信息，调用 `calculator(23*47)` 计算结果
 **相关术语**：[Function Calling](#function-calling函数调用)、[MCP](#mcp模型上下文协议)
 
@@ -447,7 +447,7 @@
 ### Vector Database（向量数据库）
 **定义**：专门存储和检索高维向量的数据库。支持相似度搜索，常用于 RAG 和语义检索。
 **英文**：Vector Database
-**相关章节**：第 11 章、第 19 章
+**相关章节**：第 8 章、第 19 章
 **示例**：Pinecone、Qdrant 存储文档 Embedding，毫秒级返回最相似的 Top-K 结果
 **相关术语**：[Embedding](#embedding向量嵌入)、[RAG](#ragretrieval-augmented-generation检索增强生成)
 
@@ -465,7 +465,7 @@
 ### Workflow（工作流）
 **定义**：定义任务执行顺序、依赖关系和错误处理的流程编排。在 Agent 系统中用于组织多步骤任务。
 **英文**：Workflow
-**相关章节**：第 15 章、第 21 章
+**相关章节**：第 14 章、第 21 章
 **示例**：电商订单工作流：验证库存 → 扣款 → 发货 → 发送通知
 **相关术语**：[DAG](#dag有向无环图)、[Temporal](#temporal工作流引擎)
 
