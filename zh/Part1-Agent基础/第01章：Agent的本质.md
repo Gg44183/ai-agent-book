@@ -166,7 +166,7 @@ Agent 不是非黑即白的概念，而是一个**谱系**。我把它分成六�
 | **L2** | ReAct Agent | 复杂问题 | 思考→行动→观察，循环 | LangChain ReAct |
 | **L3** | Planning Agent | 大任务 | 先拆解计划，再逐个执行 | 本书重点 |
 | **L4** | Multi-Agent | 更大任务 | 多个 Agent 分工协作 | Shannon Supervisor |
-| **L5** | Autonomous | 模糊目标 | 长期自主运行，自我迭代 | Devin, Manus |
+| **L5** | Autonomous | 模糊目标 | 长期自主运行，自我迭代 | Claude Code, Manus |
 
 ### 各等级详解
 
@@ -180,7 +180,7 @@ Agent 不是非黑即白的概念，而是一个**谱系**。我把它分成六�
 
 **L4 - Multi-Agent**：多个专业化的 Agent 协作。比如一个负责搜索，一个负责分析，一个负责写作。这是企业级应用的主流形态。
 
-**L5 - Autonomous**：能长期自主运行，根据环境反馈调整策略，甚至自我改进。目前还没有真正可靠的 L5 Agent，Devin 和 Manus 在这个方向探索，但还不成熟。
+**L5 - Autonomous**：能长期自主运行，根据环境反馈调整策略，甚至自我改进。目前还没有真正可靠的 L5 Agent，Claude Code 和 Manus 在这个方向探索，但还不成熟。
 
 ### 本书覆盖范围
 

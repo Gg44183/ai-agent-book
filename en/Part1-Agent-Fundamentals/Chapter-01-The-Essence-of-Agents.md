@@ -166,7 +166,7 @@ Note: The L0-L5 classification below is a ruler I drew for discussion convenienc
 | **L2** | ReAct Agent | Complex problem | Think -> Act -> Observe, loop | LangChain ReAct |
 | **L3** | Planning Agent | Big task | First decompose plan, then execute each | Focus of this book |
 | **L4** | Multi-Agent | Even bigger task | Multiple Agents divide and collaborate | Shannon Supervisor |
-| **L5** | Autonomous | Vague goal | Long-term autonomous operation, self-iteration | Devin (and similar prototypes) |
+| **L5** | Autonomous | Vague goal | Long-term autonomous operation, self-iteration | Claude Code, Manus |
 
 ### Detailed Explanation of Each Level
 
@@ -180,7 +180,7 @@ Note: The L0-L5 classification below is a ruler I drew for discussion convenienc
 
 **L4 - Multi-Agent**: Multiple specialized Agents collaborating. For example, one responsible for searching, one for analysis, one for writing. This is the mainstream form for enterprise applications.
 
-**L5 - Autonomous**: Can run autonomously for long periods, adjust strategies based on environment feedback, and even self-improve. There are currently no truly reliable L5 Agents; Devin and similar prototypes are exploring this direction, but they're not mature yet.
+**L5 - Autonomous**: Can run autonomously for long periods, adjust strategies based on environment feedback, and even self-improve. There are currently no truly reliable L5 Agents; Claude Code and Manus are exploring this direction, but they're not fully mature yet.
 
 ### Scope of This Book
 
